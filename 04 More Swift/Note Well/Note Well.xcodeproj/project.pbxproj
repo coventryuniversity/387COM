@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D72FE10B1AED2635005F75EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE10A1AED2635005F75EA /* AppDelegate.swift */; };
-		D72FE10D1AED2635005F75EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE10C1AED2635005F75EA /* ViewController.swift */; };
 		D72FE1101AED2635005F75EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72FE10E1AED2635005F75EA /* Main.storyboard */; };
 		D72FE1121AED2635005F75EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72FE1111AED2635005F75EA /* Images.xcassets */; };
 		D72FE1151AED2635005F75EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72FE1131AED2635005F75EA /* LaunchScreen.xib */; };
@@ -18,6 +17,7 @@
 		D72FE1321AED2E2A005F75EA /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE12E1AED2687005F75EA /* Note.swift */; };
 		D72FE1331AED2E2D005F75EA /* NoteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE1301AED2694005F75EA /* NoteSet.swift */; };
 		D72FE1351AED3A41005F75EA /* NoteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FE1341AED3A41005F75EA /* NoteTest.swift */; };
+		D757D4091AED466200E06A5E /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757D4081AED466200E06A5E /* NotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,6 @@
 		D72FE1051AED2635005F75EA /* Note Well.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note Well.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72FE1091AED2635005F75EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D72FE10A1AED2635005F75EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D72FE10C1AED2635005F75EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D72FE10F1AED2635005F75EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D72FE1111AED2635005F75EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D72FE1141AED2635005F75EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		D72FE12E1AED2687005F75EA /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D72FE1301AED2694005F75EA /* NoteSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSet.swift; sourceTree = "<group>"; };
 		D72FE1341AED3A41005F75EA /* NoteTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTest.swift; sourceTree = "<group>"; };
+		D757D4081AED466200E06A5E /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +86,13 @@
 			isa = PBXGroup;
 			children = (
 				D72FE10A1AED2635005F75EA /* AppDelegate.swift */,
-				D72FE10C1AED2635005F75EA /* ViewController.swift */,
 				D72FE10E1AED2635005F75EA /* Main.storyboard */,
 				D72FE1111AED2635005F75EA /* Images.xcassets */,
 				D72FE1131AED2635005F75EA /* LaunchScreen.xib */,
 				D72FE1081AED2635005F75EA /* Supporting Files */,
 				D72FE12E1AED2687005F75EA /* Note.swift */,
 				D72FE1301AED2694005F75EA /* NoteSet.swift */,
+				D757D4081AED466200E06A5E /* NotesViewController.swift */,
 			);
 			path = "Note Well";
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D72FE10D1AED2635005F75EA /* ViewController.swift in Sources */,
+				D757D4091AED466200E06A5E /* NotesViewController.swift in Sources */,
 				D72FE10B1AED2635005F75EA /* AppDelegate.swift in Sources */,
 				D72FE1311AED2694005F75EA /* NoteSet.swift in Sources */,
 				D72FE12F1AED2687005F75EA /* Note.swift in Sources */,
@@ -425,6 +425,7 @@
 				D72FE1261AED2635005F75EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D72FE1271AED2635005F75EA /* Build configuration list for PBXNativeTarget "Note WellTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				D72FE1291AED2635005F75EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
