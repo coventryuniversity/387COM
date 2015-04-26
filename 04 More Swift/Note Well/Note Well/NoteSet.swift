@@ -14,6 +14,19 @@ class NoteSet: NSObject {
         return true
     }
     
+    func clear() {
+        self.notes.removeAll(keepCapacity: false)
+    }
+    
+    func noteAtIndex(index:Int) -> Note? {
+        if index > notes.count - 1 {
+            return nil
+        } else {
+            println(index)
+            return notes[index]
+        }
+    }
+    
     // this function returns an optional
     func noteWithTitle(title:String) -> Note? {
         for note in notes {
@@ -22,6 +35,15 @@ class NoteSet: NSObject {
             }
         }
         return nil
+    }
+    
+    func removeNoteByTitle(title:String) {
+        for (index, element:Note) in enumerate(notes) {
+            if element.noteTitle == title {
+                notes.removeAtIndex(index)
+                break
+            }
+        }
     }
     
     var count:Int {

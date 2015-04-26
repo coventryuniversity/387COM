@@ -13,7 +13,21 @@ class Note: NSObject {
     }
     
     var noteTitle:String {
-        return self.title
+        set {
+            self.title = newValue
+        }
+        get {
+            return self.title
+        }
+    }
+    
+    var noteContent:String {
+        set {
+            self.content = newValue
+        }
+        get {
+            return self.content
+        }
     }
     
     // property to return a string representation of the object
