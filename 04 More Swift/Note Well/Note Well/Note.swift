@@ -12,6 +12,10 @@ class Note: NSObject {
         self.content = content
     }
     
+    var noteTitle:String {
+        return self.title
+    }
+    
     // property to return a string representation of the object
     override var description:String {
         return "title: \(self.title) \n \(self.content)"

@@ -13,4 +13,18 @@ class NoteSet: NSObject {
         notes.append(note)
         return true
     }
+    
+    // this function returns an optional
+    func noteWithTitle(title:String) -> Note? {
+        for note in notes {
+            if note.noteTitle == title {
+                return note
+            }
+        }
+        return nil
+    }
+    
+    var count:Int {
+        return notes.count
+    }
 }

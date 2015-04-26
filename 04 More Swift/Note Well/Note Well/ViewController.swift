@@ -12,10 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var notes = NoteSet.sharedInstance
         let note1 = Note(title: "Hello", content: "World")
-        notes.addNote(note1)
-        // Do any additional setup after loading the view, typically from a nib.
+        NoteSet.sharedInstance.addNote(note1)
+        println(NoteSet.sharedInstance.count)
+        let helloNote:Note? = NoteSet.sharedInstance.noteWithTitle("Hello")
+        if let note = helloNote {
+            println(note)
+        }
     }
 
     override func didReceiveMemoryWarning() {
