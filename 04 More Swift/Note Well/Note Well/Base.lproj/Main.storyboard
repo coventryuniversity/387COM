@@ -73,15 +73,40 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iiu-wd-nrd">
+                                <rect key="frame" x="16" y="80" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dUV-HT-mNR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCE-Ka-NIk">
+                                <rect key="frame" x="16" y="118" width="568" height="474"/>
+                                <color key="backgroundColor" white="0.94348229895104896" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="iiu-wd-nrd" firstAttribute="trailing" secondItem="fK4-Nj-vJD" secondAttribute="trailingMargin" id="0dh-fl-9x2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w3U-HZ-0qo" secondAttribute="trailing" constant="-16" id="11l-gs-UQm"/>
                             <constraint firstItem="w3U-HZ-0qo" firstAttribute="top" secondItem="Ytq-G5-dvV" secondAttribute="bottom" id="IMU-TT-yCH"/>
+                            <constraint firstItem="dCE-Ka-NIk" firstAttribute="trailing" secondItem="fK4-Nj-vJD" secondAttribute="trailingMargin" id="M0E-1u-ZF9"/>
                             <constraint firstItem="w3U-HZ-0qo" firstAttribute="leading" secondItem="fK4-Nj-vJD" secondAttribute="leadingMargin" constant="-16" id="NpP-oe-PFA"/>
                             <constraint firstItem="w3U-HZ-0qo" firstAttribute="top" secondItem="Ytq-G5-dvV" secondAttribute="bottom" id="Qvl-Q7-qzG"/>
+                            <constraint firstItem="dCE-Ka-NIk" firstAttribute="leading" secondItem="fK4-Nj-vJD" secondAttribute="leadingMargin" id="Sfz-ZU-NM4"/>
+                            <constraint firstItem="dCE-Ka-NIk" firstAttribute="top" secondItem="iiu-wd-nrd" secondAttribute="bottom" constant="8" id="XdY-Cy-gSH"/>
+                            <constraint firstItem="iiu-wd-nrd" firstAttribute="leading" secondItem="fK4-Nj-vJD" secondAttribute="leadingMargin" id="bWl-DL-P99"/>
+                            <constraint firstItem="NYn-DB-bTV" firstAttribute="top" secondItem="dCE-Ka-NIk" secondAttribute="bottom" constant="8" id="gnq-pl-wXu"/>
+                            <constraint firstItem="iiu-wd-nrd" firstAttribute="top" secondItem="Ytq-G5-dvV" secondAttribute="bottom" constant="60" id="iME-Ne-ztb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noteContent" destination="dCE-Ka-NIk" id="c1X-yh-qGT"/>
+                        <outlet property="noteTitle" destination="iiu-wd-nrd" id="jP1-Pq-ENE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0M8-an-vU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

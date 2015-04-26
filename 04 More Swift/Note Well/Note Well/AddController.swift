@@ -9,6 +9,9 @@
 import UIKit
 
 class AddController: UIViewController {
+    
+    @IBOutlet weak var noteTitle: UITextField!
+    @IBOutlet weak var noteContent: UITextView!
 
     @IBAction func closeView(sender: UIBarButtonItem) {
         NoteSet.sharedInstance.addNote(Note(title: "Note 1", content: "Lorem Ipsum"))
