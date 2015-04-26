@@ -1,10 +1,3 @@
-//
-//  Note_WellTests.swift
-//  Note WellTests
-//
-//  Created by Mark Tyers on 26/04/2015.
-//  Copyright (c) 2015 Coventry University. All rights reserved.
-//
 
 import UIKit
 import XCTest
@@ -13,7 +6,8 @@ class Note_WellTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        NoteSet.sharedInstance.addNote(Note(title: "Note 1", content: "Lorem Ipsum"))
+        NoteSet.sharedInstance.addNote(Note(title: "Note 2", content: "Lorem Ipsum"))
     }
     
     override func tearDown() {
@@ -21,16 +15,18 @@ class Note_WellTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testAddNote() {
+        NoteSet.sharedInstance.addNote(Note(title: "Note 3", content: "Lorem Ipsum"))
+        XCTAssertEqual(NoteSet.sharedInstance.count, 3)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testFindNote() {
+        let note1 = Note(title: "Hello", content: "World")
+        NoteSet.sharedInstance.addNote(note1)
         self.measureBlock() {
-            // Put the code you want to measure the time of here.
+            XCTAssertNotNil(NoteSet.sharedInstance.noteWithTitle("Hello"))
         }
+        XCTAssertNil(NoteSet.sharedInstance.noteWithTitle("Goodbye"))
     }
     
 }
