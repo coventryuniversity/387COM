@@ -9,6 +9,11 @@
 import UIKit
 
 class NotesController: UITableViewController {
+    
+    override func viewDidAppear(animated: Bool) {
+        println("viewDidAppear")
+        self.tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +41,16 @@ class NotesController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 5
+        return NoteSet.sharedInstance.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteItem", forIndexPath: indexPath) as! UITableViewCell
-
-        cell.textLabel?.text = "Hello World!"
+        if let note:Note = NoteSet.sharedInstance.noteAtIndex(indexPath.row) {
+            cell.textLabel?.text = note.noteTitle
+        }
+        //cell.textLabel?.text = "Hello World!"
 
         return cell
     }

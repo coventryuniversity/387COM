@@ -11,6 +11,7 @@ import UIKit
 class AddController: UIViewController {
 
     @IBAction func closeView(sender: UIBarButtonItem) {
+        NoteSet.sharedInstance.addNote(Note(title: "Note 1", content: "Lorem Ipsum"))
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
