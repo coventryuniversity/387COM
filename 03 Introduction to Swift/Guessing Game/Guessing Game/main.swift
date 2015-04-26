@@ -22,6 +22,7 @@ func input() -> String {
 
 let answer = randomIntBetween(0, 100)
 var guess:Int?
+var guessCount = 0
 
 println(answer)
 do {
@@ -30,7 +31,7 @@ do {
     println("user entered \(userInput)")
     guess = userInput.toInt()
     println("converted to int \(guess)")
-    
+    guessCount++
     if let attempt = guess {
         println("unwrapped optional: \(guess)")
         if guess > answer {
@@ -43,4 +44,5 @@ do {
 } while guess != answer
 
 println("correct, the answer was \(answer)")
+println("you took \(guessCount) attempts")
 
