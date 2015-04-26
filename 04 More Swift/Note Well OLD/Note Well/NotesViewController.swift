@@ -19,6 +19,11 @@ class NotesViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        println("viewDidAppear")
+        self.tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,13 +42,16 @@ class NotesViewController: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return 5
+        //return NoteSet.sharedInstance.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteItem", forIndexPath: indexPath) as! UITableViewCell
+        //if let note:Note = NoteSet.sharedInstance.noteAtIndex(indexPath.row) {
+        //    cell.textLabel?.text = note.noteTitle
+        //}
         cell.textLabel?.text = "Hello World"
-
         return cell
     }
     
