@@ -25,25 +25,22 @@ var guess:Int?
 
 println(answer)
 do {
-
+    print("please input a number between 0 and 100: ")
+    let userInput = input()
+    println("user entered \(userInput)")
+    guess = userInput.toInt()
+    println("converted to int \(guess)")
+    
+    if let attempt = guess {
+        println("unwrapped optional: \(guess)")
+        if guess > answer {
+            println("lower")
+        }
+        else if guess < answer {
+            println("higher")
+        }
+    }
 } while guess != answer
 
-print("please input a number between 0 and 100: ")
-let userInput = input()
-println("user entered \(userInput)")
-let userInt:Int? = userInput.toInt()
-println("converted to int \(userInt)")
-
-if let guess = userInt {
-    println("unwrapped optional: \(guess)")
-    if guess > answer {
-        println("lower")
-    }
-    else if guess < answer {
-        println("higher")
-    }
-    else {
-        println("correct, the answer was \(answer)")
-    }
-}
+println("correct, the answer was \(answer)")
 
