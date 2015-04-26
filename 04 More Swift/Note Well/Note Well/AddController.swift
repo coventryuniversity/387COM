@@ -14,7 +14,11 @@ class AddController: UIViewController {
     @IBOutlet weak var noteContent: UITextView!
 
     @IBAction func closeView(sender: UIBarButtonItem) {
-        NoteSet.sharedInstance.addNote(Note(title: "Note 1", content: "Lorem Ipsum"))
+        if let titleText = self.noteTitle.text  {
+            if let contentText = self.noteContent.text {
+                NoteSet.sharedInstance.addNote(Note(title: titleText, content: contentText))
+            }
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
