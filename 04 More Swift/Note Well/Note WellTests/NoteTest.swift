@@ -12,10 +12,13 @@ import XCTest
 class NoteTest: XCTestCase {
 
     func testCreateNote() {
+        var date = NSDate()
         var note = Note(title: "Note 1", content: "Lorem ipsum")
         XCTAssertNotNil(note)
         XCTAssertEqual(note.noteTitle, "Note 1")
         XCTAssertEqual(note.noteContent, "Lorem ipsum")
+        // property returns a UNIX timestamp with floating point component for fractions of a second
+        XCTAssertEqualWithAccuracy(note.noteAdded.timeIntervalSinceReferenceDate, date.timeIntervalSinceReferenceDate, 0.00001)
     }
     
     func testUpdateNote() {

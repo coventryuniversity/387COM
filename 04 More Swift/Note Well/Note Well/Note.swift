@@ -5,11 +5,13 @@ class Note: NSObject {
     // creating two private properties
     private var title:String!
     private var content:String!
+    private var added:NSDate!
     
     // creating an initialiser (constructor)
     init(title:String, content:String) {
         self.title = title
         self.content = content
+        self.added = NSDate()
     }
     
     var noteTitle:String {
@@ -27,6 +29,15 @@ class Note: NSObject {
         }
         get {
             return self.content
+        }
+    }
+    
+    var noteAdded:NSDate {
+        set {
+            self.added = newValue
+        }
+        get {
+            return self.added
         }
     }
     

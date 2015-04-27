@@ -46,6 +46,12 @@ class NoteSet: NSObject {
         }
     }
     
+    func removeNoteByIndex(index:Int) {
+        if index < notes.count {
+            notes.removeAtIndex(index)
+        }
+    }
+    
     var count:Int {
         return notes.count
     }

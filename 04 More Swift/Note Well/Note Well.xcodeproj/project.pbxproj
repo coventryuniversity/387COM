@@ -21,6 +21,7 @@
 		D7AD2B2A1AED696500F41025 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD2B271AED696500F41025 /* Note.swift */; };
 		D7AD2B2B1AED696500F41025 /* NoteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD2B281AED696500F41025 /* NoteSet.swift */; };
 		D7AD2B2C1AED696500F41025 /* NoteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD2B281AED696500F41025 /* NoteSet.swift */; };
+		D7CE0B9F1AEE10F900602E94 /* NSDate+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CE0B9E1AEE10F900602E94 /* NSDate+Formatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D7AD2B241AED694B00F41025 /* NoteTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTest.swift; sourceTree = "<group>"; };
 		D7AD2B271AED696500F41025 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D7AD2B281AED696500F41025 /* NoteSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteSet.swift; sourceTree = "<group>"; };
+		D7CE0B9E1AEE10F900602E94 /* NSDate+Formatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Formatting.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				D7AD2B201AED692500F41025 /* AddController.swift */,
 				D7AD2B271AED696500F41025 /* Note.swift */,
 				D7AD2B281AED696500F41025 /* NoteSet.swift */,
+				D7CE0B9E1AEE10F900602E94 /* NSDate+Formatting.swift */,
 			);
 			path = "Note Well";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				D7AD2B211AED692500F41025 /* AddController.swift in Sources */,
 				D7AD2AFC1AED68C800F41025 /* AppDelegate.swift in Sources */,
 				D7AD2B1E1AED691000F41025 /* NotesController.swift in Sources */,
+				D7CE0B9F1AEE10F900602E94 /* NSDate+Formatting.swift in Sources */,
 				D7AD2B291AED696500F41025 /* Note.swift in Sources */,
 				D7AD2B2B1AED696500F41025 /* NoteSet.swift in Sources */,
 			);
@@ -433,6 +437,7 @@
 				D7AD2B171AED68C800F41025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7AD2B181AED68C800F41025 /* Build configuration list for PBXNativeTarget "Note WellTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +446,7 @@
 				D7AD2B1A1AED68C800F41025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
