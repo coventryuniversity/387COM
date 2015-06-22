@@ -16,6 +16,14 @@ You should already understand the following:
 1. the syntax of **closures** in Swift
 2. implementing **protocols**
 
+## Sample Code
+
+There are a number of sample projects that demonstrate the underlying principles. These were originally supplied by Microsoft written in Objective-C and have been converted to run in Swift. You may use this code in your projects but must copy and paste the header comments to give credit to the authors.
+
+1. **BandSensor**: demonstrates how to capture the accelerometer and gyroscope data
+2. **BandNotification**: demonstrates how to add tiles and send them notifications
+3. **BandTileEvent**: shows how to add a button to a tile and trigger an event on the phone
+
 ## References
 
 http://stackoverflow.com/questions/24272184/connect-objective-c-framework-to-swift-ios-8-app-parse-framework
