@@ -15,6 +15,7 @@ You should already understand the following:
 
 1. the syntax of **closures** in Swift
 2. implementing **protocols**
+3. local notifications
 
 ## Sample Code
 
@@ -23,6 +24,7 @@ There are a number of sample projects that demonstrate the underlying principles
 1. **BandSensor**: demonstrates how to capture the accelerometer and gyroscope data
 2. **BandNotification**: demonstrates how to add tiles and send them notifications
 3. **BandTileEvent**: shows how to add a button to a tile and trigger an event on the phone
+4. **BandRegisterNotification**: shows how the phone can send notifications to the band and display aa badge with a number
 
 ## References
 

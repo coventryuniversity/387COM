@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BandRegisterNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oL-ZN-Ywg">
+                                <rect key="frame" x="16" y="562" width="568" height="30"/>
+                                <state key="normal" title="Run">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="runExampleCode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wuH-yf-GBK"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Output:" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-RA-LGY">
+                                <rect key="frame" x="16" y="28" width="568" height="526"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kAf-RA-LGY" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="7Z0-Xc-JLx"/>
+                            <constraint firstItem="2oL-ZN-Ywg" firstAttribute="top" secondItem="kAf-RA-LGY" secondAttribute="bottom" constant="8" id="Mll-Ry-4pM"/>
+                            <constraint firstItem="2oL-ZN-Ywg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Yj1-Wh-bO1"/>
+                            <constraint firstItem="kAf-RA-LGY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ZQX-Nf-GTf"/>
+                            <constraint firstItem="kAf-RA-LGY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="p7T-dC-cJ5"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="2oL-ZN-Ywg" secondAttribute="bottom" constant="8" id="ucD-QD-DkM"/>
+                            <constraint firstItem="2oL-ZN-Ywg" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="whR-VO-4QU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtOutput" destination="kAf-RA-LGY" id="9vU-bm-3Yn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
