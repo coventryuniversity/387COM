@@ -37,8 +37,10 @@ class ListController: UITableViewController {
         if let cell:UITableViewCell = table.cellForRowAtIndexPath(indexPath) {
             if cell.accessoryType == UITableViewCellAccessoryType.Checkmark {
                 cell.accessoryType = UITableViewCellAccessoryType.None
+                cell.accessibilityLabel = "unchecked"
             } else {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                cell.accessibilityLabel = "checked"
             }
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
