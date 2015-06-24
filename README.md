@@ -135,8 +135,6 @@
 
 15 Core Graphics
 
-> Camera controls
-
 > collection view
 
 > Core Graphics
@@ -176,6 +174,8 @@
 21 Messaging
 
 > Address book integration, email, sms.
+
+> Camera controls
 
 > Sending an iMessage, Local notifications.
 
