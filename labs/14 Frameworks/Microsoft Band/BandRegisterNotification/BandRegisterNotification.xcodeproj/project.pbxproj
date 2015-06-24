@@ -13,10 +13,10 @@
 		D76D82131B38AA8A003FD40E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76D82121B38AA8A003FD40E /* Images.xcassets */; };
 		D76D82161B38AA8A003FD40E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76D82141B38AA8A003FD40E /* LaunchScreen.xib */; };
 		D76D82221B38AA8A003FD40E /* BandRegisterNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D82211B38AA8A003FD40E /* BandRegisterNotificationTests.swift */; };
-		D76D822F1B38AAB8003FD40E /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D822E1B38AAB8003FD40E /* MicrosoftBandKit_iOS.framework */; };
 		D76D82311B38AABE003FD40E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D82301B38AABE003FD40E /* CoreBluetooth.framework */; };
-		D76D82341B38AF5E003FD40E /* tile24.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D82321B38AF5E003FD40E /* tile24.png */; };
-		D76D82351B38AF5E003FD40E /* tile46.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D82331B38AF5E003FD40E /* tile46.png */; };
+		D77210271B3B13F50014C395 /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77210261B3B13F50014C395 /* MicrosoftBandKit_iOS.framework */; };
+		D7824C1C1B3B0E0900E84641 /* C.png in Resources */ = {isa = PBXBuildFile; fileRef = D7824C1A1B3B0E0900E84641 /* C.png */; };
+		D7824C1D1B3B0E0900E84641 /* Cc.png in Resources */ = {isa = PBXBuildFile; fileRef = D7824C1B1B3B0E0900E84641 /* Cc.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +41,10 @@
 		D76D82201B38AA8A003FD40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76D82211B38AA8A003FD40E /* BandRegisterNotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandRegisterNotificationTests.swift; sourceTree = "<group>"; };
 		D76D822B1B38AA9C003FD40E /* BandRegisterNotification-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BandRegisterNotification-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		D76D822E1B38AAB8003FD40E /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = ../../../../../Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		D76D82301B38AABE003FD40E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		D76D82321B38AF5E003FD40E /* tile24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile24.png; sourceTree = "<group>"; };
-		D76D82331B38AF5E003FD40E /* tile46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile46.png; sourceTree = "<group>"; };
+		D77210261B3B13F50014C395 /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
+		D7824C1A1B3B0E0900E84641 /* C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C.png; sourceTree = "<group>"; };
+		D7824C1B1B3B0E0900E84641 /* Cc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cc.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76D82311B38AABE003FD40E /* CoreBluetooth.framework in Frameworks */,
-				D76D822F1B38AAB8003FD40E /* MicrosoftBandKit_iOS.framework in Frameworks */,
+				D77210271B3B13F50014C395 /* MicrosoftBandKit_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +70,8 @@
 		D76D81FD1B38AA8A003FD40E = {
 			isa = PBXGroup;
 			children = (
+				D77210261B3B13F50014C395 /* MicrosoftBandKit_iOS.framework */,
 				D76D82301B38AABE003FD40E /* CoreBluetooth.framework */,
-				D76D822E1B38AAB8003FD40E /* MicrosoftBandKit_iOS.framework */,
 				D76D82081B38AA8A003FD40E /* BandRegisterNotification */,
 				D76D821E1B38AA8A003FD40E /* BandRegisterNotificationTests */,
 				D76D82071B38AA8A003FD40E /* Products */,
@@ -90,8 +90,8 @@
 		D76D82081B38AA8A003FD40E /* BandRegisterNotification */ = {
 			isa = PBXGroup;
 			children = (
-				D76D82321B38AF5E003FD40E /* tile24.png */,
-				D76D82331B38AF5E003FD40E /* tile46.png */,
+				D7824C1A1B3B0E0900E84641 /* C.png */,
+				D7824C1B1B3B0E0900E84641 /* Cc.png */,
 				D76D822B1B38AA9C003FD40E /* BandRegisterNotification-Bridging-Header.h */,
 				D76D820B1B38AA8A003FD40E /* AppDelegate.swift */,
 				D76D820D1B38AA8A003FD40E /* ViewController.swift */,
@@ -209,9 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76D82111B38AA8A003FD40E /* Main.storyboard in Resources */,
-				D76D82341B38AF5E003FD40E /* tile24.png in Resources */,
 				D76D82161B38AA8A003FD40E /* LaunchScreen.xib in Resources */,
-				D76D82351B38AF5E003FD40E /* tile46.png in Resources */,
+				D7824C1C1B3B0E0900E84641 /* C.png in Resources */,
+				D7824C1D1B3B0E0900E84641 /* Cc.png in Resources */,
 				D76D82131B38AA8A003FD40E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +362,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/marktyers/Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BandRegisterNotification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -379,6 +380,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/marktyers/Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BandRegisterNotification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -440,6 +442,7 @@
 				D76D82271B38AA8A003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D76D82281B38AA8A003FD40E /* Build configuration list for PBXNativeTarget "BandRegisterNotificationTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +451,7 @@
 				D76D822A1B38AA8A003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

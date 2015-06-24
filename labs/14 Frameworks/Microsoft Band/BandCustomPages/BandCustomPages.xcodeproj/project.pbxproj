@@ -15,8 +15,8 @@
 		D76D825B1B392EA7003FD40E /* BandCustomPagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D825A1B392EA7003FD40E /* BandCustomPagesTests.swift */; };
 		D76D82681B392ED3003FD40E /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D82671B392ED3003FD40E /* MicrosoftBandKit_iOS.framework */; };
 		D76D826A1B392EDC003FD40E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D82691B392EDC003FD40E /* CoreBluetooth.framework */; };
-		D76D826D1B39355D003FD40E /* tile24.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D826B1B39355D003FD40E /* tile24.png */; };
-		D76D826E1B39355D003FD40E /* tile46.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D826C1B39355D003FD40E /* tile46.png */; };
+		D7824C201B3B0E8B00E84641 /* A.png in Resources */ = {isa = PBXBuildFile; fileRef = D7824C1E1B3B0E8B00E84641 /* A.png */; };
+		D7824C211B3B0E8B00E84641 /* Aa.png in Resources */ = {isa = PBXBuildFile; fileRef = D7824C1F1B3B0E8B00E84641 /* Aa.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,8 @@
 		D76D82641B392EBB003FD40E /* BandCustomPages-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BandCustomPages-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		D76D82671B392ED3003FD40E /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = ../../../../../../Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		D76D82691B392EDC003FD40E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		D76D826B1B39355D003FD40E /* tile24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile24.png; sourceTree = "<group>"; };
-		D76D826C1B39355D003FD40E /* tile46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile46.png; sourceTree = "<group>"; };
+		D7824C1E1B3B0E8B00E84641 /* A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A.png; sourceTree = "<group>"; };
+		D7824C1F1B3B0E8B00E84641 /* Aa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aa.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +90,8 @@
 		D76D82411B392EA7003FD40E /* BandCustomPages */ = {
 			isa = PBXGroup;
 			children = (
-				D76D826B1B39355D003FD40E /* tile24.png */,
-				D76D826C1B39355D003FD40E /* tile46.png */,
+				D7824C1E1B3B0E8B00E84641 /* A.png */,
+				D7824C1F1B3B0E8B00E84641 /* Aa.png */,
 				D76D82641B392EBB003FD40E /* BandCustomPages-Bridging-Header.h */,
 				D76D82441B392EA7003FD40E /* AppDelegate.swift */,
 				D76D82461B392EA7003FD40E /* ViewController.swift */,
@@ -209,10 +209,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76D824A1B392EA7003FD40E /* Main.storyboard in Resources */,
-				D76D826D1B39355D003FD40E /* tile24.png in Resources */,
 				D76D824F1B392EA7003FD40E /* LaunchScreen.xib in Resources */,
-				D76D826E1B39355D003FD40E /* tile46.png in Resources */,
+				D7824C201B3B0E8B00E84641 /* A.png in Resources */,
 				D76D824C1B392EA7003FD40E /* Images.xcassets in Resources */,
+				D7824C211B3B0E8B00E84641 /* Aa.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +440,7 @@
 				D76D82601B392EA7003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D76D82611B392EA7003FD40E /* Build configuration list for PBXNativeTarget "BandCustomPagesTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +449,7 @@
 				D76D82631B392EA7003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

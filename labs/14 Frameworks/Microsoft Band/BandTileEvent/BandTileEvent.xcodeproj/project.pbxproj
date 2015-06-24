@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71825201B3B0DB700B81F7B /* D.png in Resources */ = {isa = PBXBuildFile; fileRef = D718251E1B3B0DB700B81F7B /* D.png */; };
+		D71825211B3B0DB700B81F7B /* Dd.png in Resources */ = {isa = PBXBuildFile; fileRef = D718251F1B3B0DB700B81F7B /* Dd.png */; };
 		D76D81CF1B38934A003FD40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D81CE1B38934A003FD40E /* AppDelegate.swift */; };
 		D76D81D11B38934A003FD40E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D81D01B38934A003FD40E /* ViewController.swift */; };
 		D76D81D41B38934A003FD40E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76D81D21B38934A003FD40E /* Main.storyboard */; };
 		D76D81D61B38934A003FD40E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76D81D51B38934A003FD40E /* Images.xcassets */; };
 		D76D81D91B38934A003FD40E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76D81D71B38934A003FD40E /* LaunchScreen.xib */; };
 		D76D81E51B38934A003FD40E /* BandTileEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D81E41B38934A003FD40E /* BandTileEventTests.swift */; };
-		D76D81F21B389399003FD40E /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D81F11B389399003FD40E /* MicrosoftBandKit_iOS.framework */; };
 		D76D81F41B3893A6003FD40E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D81F31B3893A6003FD40E /* CoreBluetooth.framework */; };
-		D76D81FB1B3898FC003FD40E /* tile24.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D81F91B3898FC003FD40E /* tile24.png */; };
-		D76D81FC1B3898FC003FD40E /* tile46.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D81FA1B3898FC003FD40E /* tile46.png */; };
+		D77210291B3B141C0014C395 /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77210281B3B141C0014C395 /* MicrosoftBandKit_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D718251E1B3B0DB700B81F7B /* D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = D.png; sourceTree = "<group>"; };
+		D718251F1B3B0DB700B81F7B /* Dd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dd.png; sourceTree = "<group>"; };
 		D76D81C91B38934A003FD40E /* BandTileEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandTileEvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76D81CD1B38934A003FD40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76D81CE1B38934A003FD40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +43,8 @@
 		D76D81E31B38934A003FD40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76D81E41B38934A003FD40E /* BandTileEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandTileEventTests.swift; sourceTree = "<group>"; };
 		D76D81EE1B389377003FD40E /* BandTileEvent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BandTileEvent-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		D76D81F11B389399003FD40E /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = ../../../../../Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		D76D81F31B3893A6003FD40E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		D76D81F91B3898FC003FD40E /* tile24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile24.png; sourceTree = "<group>"; };
-		D76D81FA1B3898FC003FD40E /* tile46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile46.png; sourceTree = "<group>"; };
+		D77210281B3B141C0014C395 /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76D81F41B3893A6003FD40E /* CoreBluetooth.framework in Frameworks */,
-				D76D81F21B389399003FD40E /* MicrosoftBandKit_iOS.framework in Frameworks */,
+				D77210291B3B141C0014C395 /* MicrosoftBandKit_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +70,8 @@
 		D76D81C01B38934A003FD40E = {
 			isa = PBXGroup;
 			children = (
+				D77210281B3B141C0014C395 /* MicrosoftBandKit_iOS.framework */,
 				D76D81F31B3893A6003FD40E /* CoreBluetooth.framework */,
-				D76D81F11B389399003FD40E /* MicrosoftBandKit_iOS.framework */,
 				D76D81CB1B38934A003FD40E /* BandTileEvent */,
 				D76D81E11B38934A003FD40E /* BandTileEventTests */,
 				D76D81CA1B38934A003FD40E /* Products */,
@@ -90,8 +90,8 @@
 		D76D81CB1B38934A003FD40E /* BandTileEvent */ = {
 			isa = PBXGroup;
 			children = (
-				D76D81F91B3898FC003FD40E /* tile24.png */,
-				D76D81FA1B3898FC003FD40E /* tile46.png */,
+				D718251E1B3B0DB700B81F7B /* D.png */,
+				D718251F1B3B0DB700B81F7B /* Dd.png */,
 				D76D81EE1B389377003FD40E /* BandTileEvent-Bridging-Header.h */,
 				D76D81CE1B38934A003FD40E /* AppDelegate.swift */,
 				D76D81D01B38934A003FD40E /* ViewController.swift */,
@@ -208,10 +208,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71825201B3B0DB700B81F7B /* D.png in Resources */,
+				D71825211B3B0DB700B81F7B /* Dd.png in Resources */,
 				D76D81D41B38934A003FD40E /* Main.storyboard in Resources */,
-				D76D81FB1B3898FC003FD40E /* tile24.png in Resources */,
 				D76D81D91B38934A003FD40E /* LaunchScreen.xib in Resources */,
-				D76D81FC1B3898FC003FD40E /* tile46.png in Resources */,
 				D76D81D61B38934A003FD40E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +362,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/marktyers/Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BandTileEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -379,6 +380,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/marktyers/Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BandTileEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -440,6 +442,7 @@
 				D76D81EA1B38934A003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D76D81EB1B38934A003FD40E /* Build configuration list for PBXNativeTarget "BandTileEventTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +451,7 @@
 				D76D81ED1B38934A003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

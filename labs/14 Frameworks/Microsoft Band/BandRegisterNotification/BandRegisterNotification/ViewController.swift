@@ -19,8 +19,8 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
             self.output("Creating a tile...")
             var tileName = "Bell Tile"
             var tileID:NSUUID = NSUUID(UUIDString: "CCCDBA9F-12FD-47A5-83A9-E7270A43BB99")!
-            var tileIcon = MSBIcon(UIImage: UIImage(named: "tile46"), error: nil)
-            var smallIcon = MSBIcon(UIImage: UIImage(named: "tile24"), error: nil)
+            var tileIcon = MSBIcon(UIImage: UIImage(named: "C"), error: nil)
+            var smallIcon = MSBIcon(UIImage: UIImage(named: "Cc"), error: nil)
             var tile:MSBTile = MSBTile(id: tileID, name: tileName, tileIcon: tileIcon, smallIcon: smallIcon, error: nil)
             self.client.tileManager.addTile(tile, completionHandler: { (error) -> Void in
                 if error == nil || error.localizedDescription == "Tile already exists." {

@@ -19,8 +19,8 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
             self.output("Creating tile...")
             var tileName = "Barcode Tile"
             var tileID:NSUUID = NSUUID(UUIDString: "DCBABA9F-12FD-47A5-83A9-E7270A4399BB")!
-            var tileIcon = MSBIcon(UIImage: UIImage(named: "tile46"), error: nil)
-            var smallIcon = MSBIcon(UIImage: UIImage(named: "tile24"), error: nil)
+            var tileIcon = MSBIcon(UIImage: UIImage(named: "A"), error: nil)
+            var smallIcon = MSBIcon(UIImage: UIImage(named: "Aa"), error: nil)
             var tile:MSBTile = MSBTile(id: tileID, name: tileName, tileIcon: tileIcon, smallIcon: smallIcon, error: nil)
             var textBlock = MSBPageTextBlock(rect: MSBPageRect(x: 0, y: 0, width: 230, height: 40), font: MSBPageTextBlockFont.Small)
             textBlock.elementId = 10

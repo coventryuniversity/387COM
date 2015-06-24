@@ -7,18 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71825191B3B0CAF00B81F7B /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71825181B3B0CAF00B81F7B /* MicrosoftBandKit_iOS.framework */; };
+		D718251C1B3B0CC500B81F7B /* B.png in Resources */ = {isa = PBXBuildFile; fileRef = D718251A1B3B0CC500B81F7B /* B.png */; };
+		D718251D1B3B0CC500B81F7B /* Bb.png in Resources */ = {isa = PBXBuildFile; fileRef = D718251B1B3B0CC500B81F7B /* Bb.png */; };
 		D76D81921B386E96003FD40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D81911B386E96003FD40E /* AppDelegate.swift */; };
 		D76D81941B386E96003FD40E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D81931B386E96003FD40E /* ViewController.swift */; };
 		D76D81971B386E96003FD40E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76D81951B386E96003FD40E /* Main.storyboard */; };
 		D76D81991B386E96003FD40E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76D81981B386E96003FD40E /* Images.xcassets */; };
 		D76D819C1B386E96003FD40E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76D819A1B386E96003FD40E /* LaunchScreen.xib */; };
 		D76D81A81B386E96003FD40E /* BandNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D81A71B386E96003FD40E /* BandNotificationTests.swift */; };
-		D76D81B51B3874C9003FD40E /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D81B41B3874C9003FD40E /* MicrosoftBandKit_iOS.framework */; };
 		D76D81B71B3874D0003FD40E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76D81B61B3874D0003FD40E /* CoreBluetooth.framework */; };
-		D76D81BA1B387592003FD40E /* 46px.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D81B81B387592003FD40E /* 46px.png */; };
-		D76D81BB1B387592003FD40E /* 24px.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D81B91B387592003FD40E /* 24px.png */; };
-		D76D81BE1B388846003FD40E /* tile24.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D81BC1B388846003FD40E /* tile24.png */; };
-		D76D81BF1B388846003FD40E /* tile46.png in Resources */ = {isa = PBXBuildFile; fileRef = D76D81BD1B388846003FD40E /* tile46.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71825181B3B0CAF00B81F7B /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
+		D718251A1B3B0CC500B81F7B /* B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = B.png; sourceTree = "<group>"; };
+		D718251B1B3B0CC500B81F7B /* Bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bb.png; sourceTree = "<group>"; };
 		D76D818C1B386E96003FD40E /* BandNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76D81901B386E96003FD40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76D81911B386E96003FD40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,12 +44,7 @@
 		D76D81A61B386E96003FD40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76D81A71B386E96003FD40E /* BandNotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandNotificationTests.swift; sourceTree = "<group>"; };
 		D76D81B11B386F5D003FD40E /* BandNotification-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BandNotification-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		D76D81B41B3874C9003FD40E /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftBandKit_iOS.framework; path = ../../../../../Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1/MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		D76D81B61B3874D0003FD40E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		D76D81B81B387592003FD40E /* 46px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 46px.png; sourceTree = "<group>"; };
-		D76D81B91B387592003FD40E /* 24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 24px.png; sourceTree = "<group>"; };
-		D76D81BC1B388846003FD40E /* tile24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile24.png; sourceTree = "<group>"; };
-		D76D81BD1B388846003FD40E /* tile46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile46.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76D81B71B3874D0003FD40E /* CoreBluetooth.framework in Frameworks */,
-				D76D81B51B3874C9003FD40E /* MicrosoftBandKit_iOS.framework in Frameworks */,
+				D71825191B3B0CAF00B81F7B /* MicrosoftBandKit_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +72,7 @@
 			children = (
 				D76D81B11B386F5D003FD40E /* BandNotification-Bridging-Header.h */,
 				D76D81B61B3874D0003FD40E /* CoreBluetooth.framework */,
-				D76D81B41B3874C9003FD40E /* MicrosoftBandKit_iOS.framework */,
+				D71825181B3B0CAF00B81F7B /* MicrosoftBandKit_iOS.framework */,
 				D76D818E1B386E96003FD40E /* BandNotification */,
 				D76D81A41B386E96003FD40E /* BandNotificationTests */,
 				D76D818D1B386E96003FD40E /* Products */,
@@ -95,10 +91,8 @@
 		D76D818E1B386E96003FD40E /* BandNotification */ = {
 			isa = PBXGroup;
 			children = (
-				D76D81BC1B388846003FD40E /* tile24.png */,
-				D76D81BD1B388846003FD40E /* tile46.png */,
-				D76D81B81B387592003FD40E /* 46px.png */,
-				D76D81B91B387592003FD40E /* 24px.png */,
+				D718251A1B3B0CC500B81F7B /* B.png */,
+				D718251B1B3B0CC500B81F7B /* Bb.png */,
 				D76D81911B386E96003FD40E /* AppDelegate.swift */,
 				D76D81931B386E96003FD40E /* ViewController.swift */,
 				D76D81951B386E96003FD40E /* Main.storyboard */,
@@ -215,10 +209,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76D81971B386E96003FD40E /* Main.storyboard in Resources */,
-				D76D81BF1B388846003FD40E /* tile46.png in Resources */,
-				D76D81BE1B388846003FD40E /* tile24.png in Resources */,
-				D76D81BA1B387592003FD40E /* 46px.png in Resources */,
-				D76D81BB1B387592003FD40E /* 24px.png in Resources */,
+				D718251C1B3B0CC500B81F7B /* B.png in Resources */,
+				D718251D1B3B0CC500B81F7B /* Bb.png in Resources */,
 				D76D819C1B386E96003FD40E /* LaunchScreen.xib in Resources */,
 				D76D81991B386E96003FD40E /* Images.xcassets in Resources */,
 			);
@@ -370,6 +362,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/marktyers/Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BandNotification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -387,6 +380,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/marktyers/Downloads/MicrosoftBandKit_iOS_SDK_1.3.10427.1,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BandNotification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -448,6 +442,7 @@
 				D76D81AD1B386E96003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D76D81AE1B386E96003FD40E /* Build configuration list for PBXNativeTarget "BandNotificationTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +451,7 @@
 				D76D81B01B386E96003FD40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
