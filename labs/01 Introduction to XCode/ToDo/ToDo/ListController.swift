@@ -13,7 +13,7 @@ class ListController: UITableViewController {
     var items:[String] = ["Bread", "Butter"]
 
     @IBAction func showDialog(sender: UIBarButtonItem) {
-        println("showDialog")
+        print("showDialog")
         var inputTextField: UITextField?
         var alert:UIAlertController
         alert = UIAlertController(title: "New Item", message: "Type item below", preferredStyle: UIAlertControllerStyle.Alert)
@@ -23,7 +23,7 @@ class ListController: UITableViewController {
         })
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             if let itemName = inputTextField?.text {
-                println(itemName)
+                print(itemName)
                 self.items.append(itemName)
                 self.tableView.reloadData()
             }
@@ -66,7 +66,7 @@ class ListController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingItem", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingItem", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel?.text = self.items[indexPath.row]
         return cell
     }
