@@ -1,2 +1,0 @@
-# Multipeer Messaging
-## Worksheet
