@@ -16,7 +16,7 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
     
     @IBAction func runExampleCode(sender: UIButton) {
         if (self.client.isDeviceConnected) {
-            println("Starting Accelerometer updates...")
+            print("Starting Accelerometer updates...")
             self.client.sensorManager.startAccelerometerUpdatesToQueue(nil, errorRef: nil, withHandler: {(accelerometerData, error) -> (Void) in
                 self.accelLabel.text = "x:\(accelerometerData.x)  y:\(accelerometerData.y)  z:\(accelerometerData.z)"
             })
@@ -32,9 +32,9 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
         if let _client:MSBClient = clients[0] as? MSBClient {
             client = _client
             MSBClientManager.sharedManager().connectClient(client)
-            println("Please wait. Connecting to Band...")
+            print("Please wait. Connecting to Band...")
         } else {
-            println("Failed! No Bands attached.")
+            print("Failed! No Bands attached.")
             return
         }
     }
@@ -47,16 +47,16 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
     // Client Manager Delegates
     
     func clientManager(clientManager: MSBClientManager!, clientDidConnect client: MSBClient!) {
-        println("Band connected.")
+        print("Band connected.")
     }
     
     func clientManager(clientManager: MSBClientManager!, clientDidDisconnect client: MSBClient!) {
-        println("Band disconnected.")
+        print("Band disconnected.")
     }
     
     func clientManager(clientManager: MSBClientManager!, client: MSBClient!, didFailToConnectWithError error: NSError!) {
-        println("Failed to connect to Band.")
-        println(error.description)
+        print("Failed to connect to Band.")
+        print(error.description)
     }
 
 }

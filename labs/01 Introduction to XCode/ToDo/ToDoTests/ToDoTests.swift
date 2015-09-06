@@ -2,12 +2,12 @@
 //  ToDoTests.swift
 //  ToDoTests
 //
-//  Created by Mark Tyers on 12/04/2015.
-//  Copyright (c) 2015 Coventry University. All rights reserved.
+//  Created by Mark Tyers on 06/09/2015.
+//  Copyright © 2015 Coventry University. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import ToDo
 
 class ToDoTests: XCTestCase {
     
@@ -23,12 +23,12 @@ class ToDoTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }

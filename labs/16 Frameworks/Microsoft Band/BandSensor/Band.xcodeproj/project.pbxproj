@@ -166,6 +166,8 @@
 		D7D5868C1B3853C50057CD01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Coventry University";
 				TargetAttributes = {
@@ -432,6 +434,7 @@
 				D7D586B51B3853C60057CD01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7D586B61B3853C60057CD01 /* Build configuration list for PBXNativeTarget "BandTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +443,7 @@
 				D7D586B81B3853C60057CD01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

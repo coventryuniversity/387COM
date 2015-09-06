@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  ToDo
 //
-//  Created by Mark Tyers on 12/04/2015.
-//  Copyright (c) 2015 Coventry University. All rights reserved.
+//  Created by Mark Tyers on 06/09/2015.
+//  Copyright © 2015 Coventry University. All rights reserved.
 //
 
 import UIKit
