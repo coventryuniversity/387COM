@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71D24161B9CE69E00E65074 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D71D24181B9CE69E00E65074 /* Localizable.strings */; };
 		D72D88D01B9C38D500DCAF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72D88CF1B9C38D500DCAF87 /* AppDelegate.swift */; };
 		D72D88D51B9C38D500DCAF87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72D88D31B9C38D500DCAF87 /* Main.storyboard */; };
 		D72D88D71B9C38D500DCAF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72D88D61B9C38D500DCAF87 /* Assets.xcassets */; };
@@ -33,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71D24151B9CE52B00E65074 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		D71D24171B9CE69E00E65074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D71D24191B9CE6ED00E65074 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D72D88CC1B9C38D500DCAF87 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72D88CF1B9C38D500DCAF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D72D88D41B9C38D500DCAF87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				D72D88D61B9C38D500DCAF87 /* Assets.xcassets */,
 				D72D88DB1B9C38D500DCAF87 /* Info.plist */,
 				D72D88FD1B9C483400DCAF87 /* ListController.swift */,
+				D71D24181B9CE69E00E65074 /* Localizable.strings */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = D72D88C31B9C38D500DCAF87;
 			productRefGroup = D72D88CD1B9C38D500DCAF87 /* Products */;
@@ -226,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72D88D71B9C38D500DCAF87 /* Assets.xcassets in Resources */,
+				D71D24161B9CE69E00E65074 /* Localizable.strings in Resources */,
 				D72D88D51B9C38D500DCAF87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,10 +295,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D71D24181B9CE69E00E65074 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D71D24171B9CE69E00E65074 /* Base */,
+				D71D24191B9CE6ED00E65074 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D72D88D31B9C38D500DCAF87 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D72D88D41B9C38D500DCAF87 /* Base */,
+				D71D24151B9CE52B00E65074 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

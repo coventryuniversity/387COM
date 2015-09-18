@@ -31,21 +31,31 @@ class ListController: UITableViewController {
     
     @IBAction func showDialog(sender: UIBarButtonItem) {
         print("showDialog")
-        let alert = UIAlertController(title: "New Item", message: "Type item below", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let title = NSLocalizedString("New Item", comment: "an item is something to add to the list")
+        let message = NSLocalizedString("Type item below", comment: "instructions on how to enter a new item")
+        let addTitle = NSLocalizedString("Add", comment: "label on button to add the new item")
+        let cancelTitle = NSLocalizedString("Cancel", comment: "label on button used to cancel and dismiss the dialog")
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addTextFieldWithConfigurationHandler(nil)
         
-        alert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: addTitle, style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             
             if let item:String = alert.textFields![0].text {
                 print(item)
-                self.items.append(item)
-                print(self.items)
-                self.saveList()
+                let itemLength:Int = item.characters.count
+                if (itemLength > 3) {
+                    self.items.append(item)
+                    print(self.items)
+                    self.saveList()
+                    self.tableView.reloadData()
+                }
             }
             
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: cancelTitle, style: UIAlertActionStyle.Cancel, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
     }
     

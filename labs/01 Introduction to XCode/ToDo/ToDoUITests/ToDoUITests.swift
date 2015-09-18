@@ -33,10 +33,14 @@ class ToDoUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let app = XCUIApplication()
-        app.navigationBars["TODO"].buttons["Add"].tap()
-        app.keys["e"].tap()
-        app.alerts["New Item"].collectionViews.buttons["Add"].tap()
+        
+        
+        
+        //let app = XCUIApplication()
+        //app.navigationBars["TODO"].buttons["Add"].tap()
+        //app.keys["e"].tap()
+        //app.alerts["New Item"].collectionViews.buttons["Add"].tap()
+        
         
         
         
