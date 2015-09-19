@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D71CF2FD1BADB31B00C48777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CF2FC1BADB31B00C48777 /* AppDelegate.swift */; };
-		D71CF2FF1BADB31B00C48777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CF2FE1BADB31B00C48777 /* ViewController.swift */; };
 		D71CF3021BADB31B00C48777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71CF3001BADB31B00C48777 /* Main.storyboard */; };
 		D71CF3041BADB31B00C48777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71CF3031BADB31B00C48777 /* Assets.xcassets */; };
 		D71CF3071BADB31B00C48777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71CF3051BADB31B00C48777 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		D71CF32B1BADB34800C48777 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CF32A1BADB34800C48777 /* Forecast.swift */; settings = {ASSET_TAGS = (); }; };
 		D71CF32C1BADB34800C48777 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CF32A1BADB34800C48777 /* Forecast.swift */; settings = {ASSET_TAGS = (); }; };
 		D71CF32E1BADB36100C48777 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CF32D1BADB36100C48777 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		D75517F01BADE92100A4FD68 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75517EF1BADE92100A4FD68 /* TableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 /* Begin PBXFileReference section */
 		D71CF2F91BADB31B00C48777 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71CF2FC1BADB31B00C48777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D71CF2FE1BADB31B00C48777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D71CF3011BADB31B00C48777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D71CF3031BADB31B00C48777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D71CF3061BADB31B00C48777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		D71CF31E1BADB31B00C48777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71CF32A1BADB34800C48777 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		D71CF32D1BADB36100C48777 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		D75517EF1BADE92100A4FD68 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				D71CF2FC1BADB31B00C48777 /* AppDelegate.swift */,
-				D71CF2FE1BADB31B00C48777 /* ViewController.swift */,
+				D75517EF1BADE92100A4FD68 /* TableViewController.swift */,
 				D71CF3001BADB31B00C48777 /* Main.storyboard */,
 				D71CF3031BADB31B00C48777 /* Assets.xcassets */,
 				D71CF3051BADB31B00C48777 /* LaunchScreen.storyboard */,
@@ -262,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D71CF2FF1BADB31B00C48777 /* ViewController.swift in Sources */,
 				D71CF32B1BADB34800C48777 /* Forecast.swift in Sources */,
 				D71CF2FD1BADB31B00C48777 /* AppDelegate.swift in Sources */,
+				D75517F01BADE92100A4FD68 /* TableViewController.swift in Sources */,
 				D71CF32E1BADB36100C48777 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
