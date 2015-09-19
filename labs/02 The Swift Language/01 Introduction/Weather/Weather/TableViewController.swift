@@ -15,6 +15,7 @@ struct Item {
 }
 /* this is an enumeration that conform to the 'ErrorType' protocol. It defines different but related errors that we can throw in our code. We will spend more time with protocol in the next worksheet. */
 enum JSONError: ErrorType {
+    case InvalidURL(String)
     case InvalidKey(String)
     case InvalidArray
 }
@@ -71,10 +72,61 @@ class TableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func useNative() {
-        
+    func useNative(withCity city: String) -> Void {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        do {
+            let jsonUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&cnt=7&q=\(city)"
+            print(jsonUrl)
+            let session = NSURLSession.sharedSession()
+            guard let shotsUrl = NSURL(string: jsonUrl) else {
+                throw JSONError.InvalidURL(jsonUrl)
+            }
+            let task = session.dataTaskWithURL(shotsUrl, completionHandler: {(data, response, error) -> Void in
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+                    print(json)
+                    guard let days:[AnyObject] = (json["list"] as! [AnyObject]) else {
+                        throw JSONError.InvalidArray
+                    }
+                    //print(days)
+                    for day in days {
+                        //print(day)
+                        guard let timestamp:Double = day["dt"] as? Double else {
+                            throw JSONError.InvalidKey("dt")
+                        }
+                        print(timestamp)
+                        let date = NSDate(timeIntervalSince1970: NSTimeInterval(timestamp))
+                        guard let weather:[AnyObject] = day["weather"] as? [AnyObject] else {
+                            throw JSONError.InvalidArray
+                        }
+                        //print(weather)
+                        guard let desc:String = weather[0]["description"] as? String else {
+                            throw JSONError.InvalidKey("description")
+                        }
+                        print(desc)
+                        guard let temp:AnyObject = day["temp"] else {
+                            throw JSONError.InvalidKey("temp")
+                        }
+                        //print(temp)
+                        guard let max:Float = temp["max"] as? Float else {
+                            throw JSONError.InvalidKey("max")
+                        }
+                        print(max)
+                        let newDay = Item(date: date, description: desc, maxTemp: max)
+                        self.days.append(newDay)
+                        self.tableView.reloadData()
+                    }
+                } catch {
+                    print("Fetch failed: \((error as NSError).localizedDescription)")
+                }
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            })
+            task.resume()
+        } catch {
+            
+        }
     }
-    
+
     func refresh(sender: AnyObject) {
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
@@ -83,10 +135,11 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
+        self.tableView.delegate = self
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         /* there are two popular ways to handle JSON data in Swift. There is the built-in 'native' approach but there is also a popular library called 'SwiftyJSON' which provides a number of classes to make life easier. This class contains both approaches. By commenting and uncommenting the two lines below you can work with either approach. Notice that Swift uses 'named parameters'. Compare the function definition (above) with the calling syntax. */
-        self.useSwifty(withCity: "coventry,uk")
-        //self.useNative()
+        //self.useSwifty(withCity: "coventry,uk")
+        self.useNative(withCity: "coventry,uk")
         self.tableView.reloadData()
     }
 
@@ -111,8 +164,12 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("dailyForecast", forIndexPath: indexPath)
         print(days[indexPath.row])
-        cell.textLabel?.text = days[indexPath.row].description
-
+        if let label = cell.textLabel {
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "EE MMM d"
+            label.text = formatter.stringFromDate(days[indexPath.row].date)
+            //label.text = days[indexPath.row].description
+        }
         return cell
     }
     
