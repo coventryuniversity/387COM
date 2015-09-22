@@ -1,12 +1,5 @@
 # Introduction to Swift
 
-
-1. Parsing JSON Data with SwiftyJSON
-2. Parsing JSON Data with Native Tools
-3. Building a Custom Model Class
-4. Building a Framework
-
-
 Tasks
 
 Load the Weather Project into XCode
@@ -17,9 +10,13 @@ Read through the comments and make sure you understand how the code works.
 - useSwifty (line 29)
 - tableView cell for row at indexpath (line 164)
 
-Now run the app and make sure it works correctly (pull to refesh the tableview)
+Now run the app and make sure it works correctly (pull to refesh the tableview). As the app runs study the **console** window. Try to work out what lines of code are generating the lines of output.
 
-## Formatting the Cell
+Try changing your device location. You could walk around the block but it would be difficult to see the console output without taking your computer! Luckily we can simulatr different locations using the **Simulate Location** button and choosing a location from the list.
+
+![Choose Location](images/choose_location.png)
+
+## Displaying Data in Table Cells
 
 Carefully read the *Data Source* methods with the following signature:
 ```
@@ -69,4 +66,24 @@ Locate the method `getForecast(withCity city: String) -> Void` located near the 
 
 ### Test Your Knowledge.
 
+The app already implements location services. You will modify the app to use the device's current location when displaying the weather. The **weather api** allows you to retrieve weather data based on a supplied latitude and longitude.
+```
+http://api.openweathermap.org/data/2.5/forecast/daily?lat=52.3&lon=-1.53&cnt=7
+```
+Read the documentation for the following classes:
 
+1. CLLocationManager
+2. CLLocationManagerDelegate
+3. CLAuthorizationStatus
+
+Study the code to understand the steps undertaken to display the current longitude and latitude in the console.
+
+1. write a new method that takes a latitude and longitude to return weather data and store it in the array
+2. call this method to update the weather each time the phone location changes
+3. retrieve the location name and display this in the navigation bar
+
+# Advanced
+
+Now you have understood the basics it's time to move onto the more advanced topics. You don't need to know or apply this to pass the module however it is important if you want to get a higher grade.
+
+In this advanced section we will cover several ways to implement an important design pattern called **Model-View-Controller**.

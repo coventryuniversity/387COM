@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreLocation
+
 /* this is a struct that describes the data required for each forecast item. */
 struct Item {
     var date:NSDate
@@ -21,12 +23,15 @@ enum JSONError: ErrorType {
     case InvalidArray
     case InvalidData
     case InvalidImage
+    case indexOutOfRange
 }
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, CLLocationManagerDelegate {
     
     /* Here we declare an empty array to store Item structs. */
     var days:[Item] = []
+    /* the CLLocationManager is used by iOS to handle the device location. We will be using this in part 3 of the tutorial */
+    let locationManager = CLLocationManager()
     
     /* This is a function that takes a single 'String' parameter and returns nothing (Void). There are a couple of important features to note. First, all function declarations begin with the 'func' keyword. Secondly notice that Swift uses 'named parameters', in other words each parameter includes a label to describe its purpose. In our example the label is 'withCity'. Each parameter may also include a data type. here we are declaring that the parameter must be of type 'String'. The return value is indicated after the 'skinny arrow' If there is no return value the arrow and return type may be omitted. */
     func getForecast(withCity city: String) -> Void {
@@ -89,7 +94,6 @@ class TableViewController: UITableViewController {
                         let newDay = Item(date: date, description: desc, maxTemp: max, icon: image)
                         /* We can now append this to the 'days' array we declared at the top of this class. */
                         self.days.append(newDay)
-                        self.tableView.reloadData()
                     }
                 /* this first catch block only catches a specific type or error. Since this error sends a String parameter we can use this to display helpful messages. */
                 } catch JSONError.InvalidKey(let message) {
@@ -103,6 +107,10 @@ class TableViewController: UITableViewController {
                 }
                 /* Now we have finished downloading data from the Internet we can hide the 'networkActivityIndicator' */
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                /* This code is in a 'completion handler' which means it is running in its own thread. Any code targeting the user interface must be executed in the main thread so the call to reload the table view needs to be dispatched to the main thread for it to work. */
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.tableView.reloadData()
+                }
             })
             task.resume()
         } catch {
@@ -114,14 +122,49 @@ class TableViewController: UITableViewController {
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
+    
+    /* this is one of the CLLocationManager delegate methods. It gets called whenever the device location changes. */
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("location changed")
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse){
+                if let currentLocation = manager.location {
+                    print("lon: \(currentLocation.coordinate.longitude)")
+                    print("lat: \(currentLocation.coordinate.latitude)")
+                }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
         self.tableView.delegate = self
+        /* This view controller has a 'title' property. This changes the text displayed in the navigation bar. */
+        self.title = "Weather"
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        /* Now we configure the CLLocationManager. We need to request permission to use the phone location */
+        self.locationManager.requestWhenInUseAuthorization()
+        /* the CLLocationManager emits messages which can only be picked up by a class that implements the CLLocationManangerDelegate. This line assigns the current class as the delegate so it can respond to the messages being emitted. */
+        self.locationManager.delegate = self
+        /* Since this is a weather app we cound set this value to kCLLocationAccuracyKilometer but to make it easier to test location changes we are making it more sensitive... */
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        /* iOS groups location-based apps into specific categories */
+        self.locationManager.activityType = CLActivityType.OtherNavigation
+        /* We want to start tracking our location immediately... */
+        self.locationManager.startUpdatingLocation()
         /* there are two popular ways to handle JSON data in Swift. There is the built-in 'native' approach but there is also a popular library called 'SwiftyJSON' which provides a number of classes to make life easier. This class contains both approaches. By commenting and uncommenting the two lines below you can work with either approach. Notice that Swift uses 'named parameters'. Compare the function definition (above) with the calling syntax. */
         self.getForecast(withCity: "coventry,uk")
+        
+        /* this is an example of calling a 'class' method. Notice how the **class name** is used (Forecast) rather than instantiating an object and calling it from there. The fourth parameter is a completion handler. This is needed because the method includes an asynchronous call and we need to wait for this to finish before being able to access the data. You will need to comment out the previous line (self.getForecast) before uncommenting this block. */
+        /*
+        ClassForecast.getForecast(withCity: "coventry,uk", forDays: 7, completionHandler: {(data) -> Void in
+            self.days = data
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+            }
+        })
+        */
+        
         /* here we can change the default row height for our UITableViewCell */
         self.tableView.rowHeight = 66.0
         self.tableView.reloadData()
