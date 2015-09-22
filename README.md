@@ -71,7 +71,7 @@ git config --global user.email 'your@email.com'
 You will need to add your Mac's **public key** to the BitBucket server before you will be able to push your changes. The first step is to make sure you have a public/private key pair on your development machine. Open the **Terminal** app and enter the following.
 ```
 ls -a ~/.ssh
-id_rsa     id_rsa.pub
+.		..		id_rsa     id_rsa.pub
 
 ```
 Amongst the files you should see those listed in the above example. If these files do **not** exist you will need to run the following command to generate them. Make sure you enter the email address you used to register for your *BitBucket* account. The default options are fine so just press the *Enter* key until you are returned to the command prompt.
@@ -85,11 +85,9 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 <img align="right" src="labs/01 XCode/01 Introduction/images/manage_account.png">
 
-Now open your BitBucket home screen and click on the **Profile* button (see screenshot) then select on the **Manage account** option located down the left-edge of the screen. You should see a tab down the left of the screen labelled **SSH Keys**. Click on this then click on the **Add key** button. Paste the contents of the clipboard into the **key** field and add a suitable **Label**.
+Now open your BitBucket home screen and click on the **Profile* button (see screenshot) then select on the **Manage account** option located down the left-edge of the screen. You should see a tab down the left of the screen labelled **SSH Keys**. Click on this then click on the **Add key** button. Paste the contents of the clipboard into the **key** field and add a suitable **Label** and click on the green **Add SSH Key** button.
 
 <img align="right" src="labs/01 XCode/01 Introduction/images/add_key.png">
-
-and click on the green **Add SSH Key** button. Paste the key into the large field and give it the title **Cloud 9**. Finally click on the **Add Key** button.
 
 ## 1.3 Pushing to the New Remote
 
