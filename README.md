@@ -85,7 +85,7 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 <img align="right" src="labs/01 XCode/01 Introduction/images/manage_account.png">
 
-Now open your BitBucket home screen and click on the **Profile* button (see screenshot) then select on the **Manage account** option located down the left-edge of the screen. You should see a tab down the left of the screen labelled **SSH Keys**. Click on this then click on the **Add key** button. Paste the contents of the clipboard into the **key** field and add a suitable **Label** and click on the green **Add SSH Key** button.
+Now open your BitBucket home screen and click on the **Profile** button (see screenshot) then select on the **Manage account** option located down the left-edge of the screen. You should see a tab down the left of the screen labelled **SSH Keys**. Click on this then click on the **Add key** button. Paste the contents of the clipboard into the **key** field and add a suitable **Label** and click on the green **Add SSH Key** button.
 
 <img align="right" src="labs/01 XCode/01 Introduction/images/add_key.png">
 

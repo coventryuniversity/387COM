@@ -1,66 +1,23 @@
 //
-//  TableViewController.swift
-//  Better Weather
+//  ListViewController.swift
+//  Countries
 //
-//  Created by Mark Tyers on 21/09/2015.
+//  Created by Mark Tyers on 23/09/2015.
 //  Copyright © 2015 Mark Tyers. All rights reserved.
 //
 
 import UIKit
-import CoreLocation
 
-/* this is a struct that describes the data required for each forecast item. */
-struct Item {
-    var date:NSDate
-    var description:String
-    var maxTemp:Float
-    var icon:UIImage
-}
-
-enum JSONError: ErrorType {
-    case InvalidURL(String)
-    case InvalidKey(String)
-    case InvalidArray
-    case InvalidData
-    case InvalidImage
-    case indexOutOfRange
-}
-
-class TableViewController: UITableViewController, CLLocationManagerDelegate {
-    
-    var days:[Item] = []
-    let locationManager = CLLocationManager()
-    
-    func refresh(sender: AnyObject) {
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
-    }
-    
-    func configureCoreLocation() {
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        self.locationManager.activityType = CLActivityType.OtherNavigation
-        self.locationManager.startUpdatingLocation()
-    }
+class ListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
-        self.tableView.delegate = self
-        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.configureCoreLocation()
-        do {
-            print("start")
-            let forecast = try Forecast()
-            self.days = forecast.getForecast()
-            print(self.days)
-            print("end")
-            self.tableView.reloadData()
-        } catch {
-            
-        }
-        self.tableView.rowHeight = 66.0
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,25 +25,27 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.days.count
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
-    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("dailyForecast", forIndexPath: indexPath)
-        if let label = cell.textLabel {
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "EE"
-            label.text = formatter.stringFromDate(days[indexPath.row].date)
-        }
-        if let detail = cell.detailTextLabel {
-            detail.text = days[indexPath.row].description
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
