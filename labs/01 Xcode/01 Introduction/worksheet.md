@@ -3,31 +3,19 @@
 
 This lab is designed to take you through many of the key features of XCode which is the default Integrated Development Environment (IDE) for writing iOS apps. Don’t worry if you don’t understand many of the terms. Spend time finding your way around the XCode interface and ensure you understand the purpose behind the steps you carry out.
 
-To complete this lab you will need to be running XCode 6 since we will be writing our code in the Swift programming language.
+To complete this lab you will need to be running **XCode 7** since we will be writing our code in the Swift programming language.
 
-During this lab we will be building a shopping app called TODO which allows you to add and remove items from a shopping list at check items off as you buy them. All the graphical assets are available for you to use.
+During this lab we will be building a shopping app called **TODO** which allows you to add and remove items from a shopping list at check items off as you buy them. All the graphical assets are available for you to use.
 
 ## Software Requirements
 
-In order to complete this lab you will need access to a Mac computer running OS X 10.10 Yosemite and XCode 6. These are both free downloads from the Mac App Store.
+In order to complete this lab you will need access to a Mac computer running OS X 10.10 Yosemite (or later) and XCode 7. These are both free downloads from the Mac App Store.
 
 ## Regular Testing
 
 The lab is broken down in a series of tasks. At the end of each task you should run your project in the simulator to ensure there are no build errors. The steps it takes you through are typical for all iOS projects.
 
 So during this lab, make sure you remember to test everything after each step.
-
-# Accessing the Teaching Materials
-
-All the materials used in this module, both worksheets and sample code, are available through GitHub. The repository is located at `https://github.com/covcom/387COM`. You will need to clone this to your Mac before starting the labs. If you are comfortable doing this you can skip the rest of this section.
-
-## Cloning the Material
-
-This will require you to use the *Terminal* app, located in the `Application/Utilities` folder on your Mac. If you have ever used *Linux* most of the commands we use will be familiar since OSX is a UNIX variant. Open up the Terminal app and navigate to the Documents directory using `cd Documents`. You can then clone the entire repository using `git clone https://github.com/covcom/387COM` which will download the repository to the documents directory and checkout the latest files for you to work with. You should find a directory called 387OCOM. Inside this there is a directory for each lab.
-
-## Committing Your Changes
-
-Whilst you can freely clone the supplied repository you won't be able to commit any of your work back to it. You will need to create your own repository if you wish to do this. It is recommended that you create a repository on BitBucket[1]. Start by creating an account on their website (use your personal email address for this) and logging in.
 
 ### Registering an SSH Key on BitBucket
 
