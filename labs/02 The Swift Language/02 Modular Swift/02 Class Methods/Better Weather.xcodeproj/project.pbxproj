@@ -12,7 +12,6 @@
 		D7477E361BAFF23D00E101D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7477E351BAFF23D00E101D9 /* Assets.xcassets */; };
 		D7477E391BAFF23E00E101D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7477E371BAFF23E00E101D9 /* LaunchScreen.storyboard */; };
 		D7477E411BAFF40300E101D9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477E401BAFF40300E101D9 /* TableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D7477E431BAFF5BE00E101D9 /* WeatherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477E421BAFF5BE00E101D9 /* WeatherClass.swift */; settings = {ASSET_TAGS = (); }; };
 		D7477E451BAFF5CD00E101D9 /* WeatherStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477E441BAFF5CD00E101D9 /* WeatherStatic.swift */; settings = {ASSET_TAGS = (); }; };
 		D7477E471BAFF5DC00E101D9 /* WeatherSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477E461BAFF5DC00E101D9 /* WeatherSingleton.swift */; settings = {ASSET_TAGS = (); }; };
 		D7477E491BAFF84600E101D9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7477E481BAFF84600E101D9 /* CoreLocation.framework */; };
@@ -26,7 +25,6 @@
 		D7477E381BAFF23E00E101D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7477E3A1BAFF23E00E101D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7477E401BAFF40300E101D9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		D7477E421BAFF5BE00E101D9 /* WeatherClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherClass.swift; sourceTree = "<group>"; };
 		D7477E441BAFF5CD00E101D9 /* WeatherStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherStatic.swift; sourceTree = "<group>"; };
 		D7477E461BAFF5DC00E101D9 /* WeatherSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSingleton.swift; sourceTree = "<group>"; };
 		D7477E481BAFF84600E101D9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -66,7 +64,6 @@
 			children = (
 				D7477E2E1BAFF23D00E101D9 /* AppDelegate.swift */,
 				D7477E401BAFF40300E101D9 /* TableViewController.swift */,
-				D7477E421BAFF5BE00E101D9 /* WeatherClass.swift */,
 				D7477E441BAFF5CD00E101D9 /* WeatherStatic.swift */,
 				D7477E461BAFF5DC00E101D9 /* WeatherSingleton.swift */,
 				D7477E321BAFF23D00E101D9 /* Main.storyboard */,
@@ -148,7 +145,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7477E431BAFF5BE00E101D9 /* WeatherClass.swift in Sources */,
 				D7477E411BAFF40300E101D9 /* TableViewController.swift in Sources */,
 				D7477E471BAFF5DC00E101D9 /* WeatherSingleton.swift in Sources */,
 				D7477E451BAFF5CD00E101D9 /* WeatherStatic.swift in Sources */,

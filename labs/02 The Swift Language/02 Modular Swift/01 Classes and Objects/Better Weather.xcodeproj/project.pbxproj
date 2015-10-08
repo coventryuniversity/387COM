@@ -43,9 +43,9 @@
 		D7477E221BAFF23D00E101D9 = {
 			isa = PBXGroup;
 			children = (
-				D7477E481BAFF84600E101D9 /* CoreLocation.framework */,
 				D7477E2D1BAFF23D00E101D9 /* Better Weather */,
 				D7477E2C1BAFF23D00E101D9 /* Products */,
+				D7477E481BAFF84600E101D9 /* CoreLocation.framework */,
 			);
 			sourceTree = "<group>";
 		};

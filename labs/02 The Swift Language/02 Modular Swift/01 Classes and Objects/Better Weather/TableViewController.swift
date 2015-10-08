@@ -48,17 +48,26 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         print("viewDidLoad")
         self.tableView.delegate = self
-        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        if let refresh = self.refreshControl {
+            refresh.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        }
         self.configureCoreLocation()
         do {
             print("start")
-            let forecast = try Forecast()
-            self.days = forecast.getForecast()
-            print(self.days)
-            print("end")
-            self.tableView.reloadData()
+            let forecast = Forecast()
+            print("1")
+            print(forecast.getForecast())
+            try forecast.loadData( { itemsArray in
+                print("2")
+                print(itemsArray)
+                self.days = forecast.getForecast()
+                print(self.days)
+                print("end")
+                self.tableView.reloadData()
+            })
         } catch {
-            
+            print("3")
+            print("Error: \((error as NSError).localizedDescription)")
         }
         self.tableView.rowHeight = 66.0
     }

@@ -6,19 +6,25 @@ class Forecast {
     
     var forecast = [Item]()
     
-    init() throws {
+    init() {
+        
     }
     
-    private func loadData() throws -> [Item] {
+    func loadData(dataHandler: ([Item])->()) throws {
+        print("a")
         var items = [Item]()
         let jsonUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&cnt=7&q=coventry,uk"
         print(jsonUrl)
+        print("b")
         let session = NSURLSession.sharedSession()
         guard let shotsUrl = NSURL(string: jsonUrl) else {
+            print("c")
             throw JSONError.InvalidURL(jsonUrl)
         }
+        print(shotsUrl)
         session.dataTaskWithURL(shotsUrl, completionHandler: {(data, response, error) -> Void in
             do {
+                print("d")
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
                 print(json)
                 guard let days:[AnyObject] = (json["list"] as! [AnyObject]) else {
@@ -58,7 +64,7 @@ class Forecast {
                     print(newDay)
                     items.append(newDay)
                 }
-                return items // this line fails because I'm in the closure. I want this to be the value returned by the loadData() function.
+                dataHandler(items)
             } catch {
                 print("Fetch failed: \((error as NSError).localizedDescription)")
             }

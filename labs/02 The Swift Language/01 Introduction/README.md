@@ -4,15 +4,19 @@ Tasks
 
 Load the Weather Project into XCode
 
-Read through the comments and make sure you understand how the code works.
+In your web browser open the following URL in **Safari**, it will help you understand the code better. 
 
-- viewDidLoad (line 135)
-- useSwifty (line 29)
-- tableView cell for row at indexpath (line 164)
+http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&cnt=7&q=coventry,uk
+
+If the JSON code is not nicely formatted you will need to install a browser extension.
+
+https://github.com/rfletcher/safari-json-formatter/downloads
+
+Read through the comments and make sure you understand how the code works.
 
 Now run the app and make sure it works correctly (pull to refesh the tableview). As the app runs study the **console** window. Try to work out what lines of code are generating the lines of output.
 
-Try changing your device location. You could walk around the block but it would be difficult to see the console output without taking your computer! Luckily we can simulatr different locations using the **Simulate Location** button and choosing a location from the list.
+Try changing your device location. You could walk around the block but it would be difficult to see the console output without taking your computer! Luckily we can simulator different locations using the **Simulate Location** button and choosing a location from the list.
 
 ![Choose Location](images/choose_location.png)
 
@@ -32,7 +36,7 @@ Make sure you understand what its purpose is. In particular read through the doc
 4. NSDate
 5. NSDateFormatter
 
-Currently only the date is showing in each cell. Open up the Storyboard, select the table cell and, in the attributed inspector change the style from **Basic** to **Right Detail**. Notice how in the cell-for-row-at-indexpath data source method only unwraps and sets the 
+Currently only the date is showing in each cell. Open up the Storyboard, select the table cell and, in the **attribute inspector** change the style from **Basic** to **Right Detail**. Notice how in the cell-for-row-at-indexpath data source method only unwraps and sets the 
 
 Use the existing code as a guide to unwrap the **detailTextLabel**. Display the date in this and, in the main **textLabel** display the weather description and max temperature using string interpolation (there are several examples of this in the code).
 
@@ -63,6 +67,8 @@ You will be making use of a number of important classes. Take a look at their do
 4. NSJSONSerialization
 
 Locate the method `getForecast(withCity city: String) -> Void` located near the start of the `TableViewController.swift` file. Use the detailed comments to read through the code so that you understand how it works. Make sure you fully understand how the data is extracted safely from the json data.
+
+Use you knowledge to display the forecasted **air pressure** in the table view cell.
 
 ### Test Your Knowledge.
 
