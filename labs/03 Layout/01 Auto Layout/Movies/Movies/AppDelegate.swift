@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ToDo
+//  Movies
 //
-//  Created by Mark Tyers on 06/09/2015.
+//  Created by Mark Tyers on 09/10/2015.
 //  Copyright © 2015 Coventry University. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 1))
+        // Override point for customization after application launch.
         return true
     }
 
