@@ -46,6 +46,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
 
     /* this method gets triggered whenever a segue is triggered */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("prepareForSegue")
         if segue.identifier == "showDetails" {  // if the correct segue is triggered
             if let destination:DetailViewController = segue.destinationViewController as? DetailViewController {  // we get a reference to the controller that will be loaded
                 if let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow { // we then find out which cell was clicked
