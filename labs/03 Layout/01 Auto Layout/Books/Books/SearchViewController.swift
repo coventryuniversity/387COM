@@ -1,37 +1,42 @@
-//
-//  SearchViewController.swift
-//  Books
-//
-//  Created by Mark Tyers on 09/10/2015.
-//  Copyright © 2015 Mark Tyers. All rights reserved.
-//
 
 import UIKit
 
+/* our subclass of UITableViewController implements the UISearchBarDelegate */
 class SearchViewController: UITableViewController, UISearchBarDelegate {
 
+    /* this outlet connects to the search bar in the storyboard. Click on the round circle in the left margin of the editor... */
     @IBOutlet weak var searchBar: UISearchBar!
     
+    /* this variable will store the results of our searches. */
     var searchResults = [Book]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /* the searchBar object refers to the @IBOutlet (see above). Our class implements the UISearchBarDelegate protocol and so can act as its *delegate*. A delegate listens out for messages emitted by a control or class. */
+        self.searchBar.delegate = self
+    }
+    
+    /* this is a UISearchBarDelegate method. By setting this class as the delegate for the searchBar it gets triggered each time the search button is pressed. */
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         print("search clicked")
-        print(searchBar.text)
-        if let text:String = searchBar.text {
-            self.search(withText: text)
+        print(searchBar.text) // the searchbar has a text property that stores the string entered into the search bar.
+        if let text:String = searchBar.text { // the searchBar.text property is an optional so we need to unwrap it before it can be accessed.
+            self.search(withText: text)  // we now call our search() method (see below), passing the search string.
         }
     }
     
+    /* this method gets called by the UISearchBar delegate method (see above) */
     func search(withText text:String) {
-        do {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        do {  // our Books.search() class method may return an error so we wrap it in a do...catch block
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true // lets turn on the network activity indicator in the status bar...
+            /* the Books.search() method takes two parameters, a search string and a completion handler. Notice the simplified syntax used here */
             try Books.search(withText: text, completion: {booklist in
                 print(booklist)
-                self.searchResults = booklist
-                dispatch_async(dispatch_get_main_queue(), {
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    self.tableView.reloadData()
-                    self.searchBar.resignFirstResponder()
+                self.searchResults = booklist  // booklist contains the search results which need to be stored in the searchResults array
+                dispatch_async(dispatch_get_main_queue(), { // any changes to the UI need to happen in the main thread.
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false  // we turn off the network activity indicator
+                    self.tableView.reloadData()  // we reload the data into the table view
+                    self.searchBar.resignFirstResponder()  // and we hide the keyboard
                 })
             })
         } catch {
@@ -39,22 +44,16 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         }
     }
 
-    
+    /* this method gets triggered whenever a segue is triggered */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetails" {
-            if let destination:DetailViewController = segue.destinationViewController as? DetailViewController {
-                if let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow {
-                    destination.book = self.searchResults[indexPath.row]
+        if segue.identifier == "showDetails" {  // if the correct segue is triggered
+            if let destination:DetailViewController = segue.destinationViewController as? DetailViewController {  // we get a reference to the controller that will be loaded
+                if let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow { // we then find out which cell was clicked
+                    destination.book = self.searchResults[indexPath.row] // finally we store the correct Book struct in the public variable in the controller that will be displayed.
                 }
             }
             
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.searchBar.delegate = self
-        //self.search()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,12 +64,10 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.searchResults.count
     }
 
@@ -82,51 +79,5 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         }
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

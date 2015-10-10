@@ -18,6 +18,7 @@ enum JSONError: ErrorType {
 
 class Books {
     
+    /* this is a static (class) method. It gets called directly from the Books class without needing to instantiate an object first. It takes two parameters, a search string and a completion handler. */
     class func search(withText text:String, completion: ([Book])->()) throws {
         var books = [Book]()
         let jsonUrl = "https://www.googleapis.com/books/v1/volumes?maxResults=40&fields=items(id,volumeInfo(title))&q=\(text)"
@@ -50,7 +51,6 @@ class Books {
                 }
             } catch {
                 print("Fetch failed: \((error as NSError).localizedDescription)")
-                //throw JSONError.InvalidURL(jsonUrl)
             }
             completion(books)
         }).resume()
