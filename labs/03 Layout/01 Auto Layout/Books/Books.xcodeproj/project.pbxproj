@@ -12,6 +12,7 @@
 		D732F2D71BC844AC00765CAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D732F2D51BC844AC00765CAF /* Main.storyboard */; };
 		D732F2D91BC844AC00765CAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D732F2D81BC844AC00765CAF /* Assets.xcassets */; };
 		D732F2E41BC844FC00765CAF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D732F2E31BC844FC00765CAF /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D79086401BC96FDE0039D1D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790863F1BC96FDE0039D1D9 /* DetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D732F2D81BC844AC00765CAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D732F2DD1BC844AC00765CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D732F2E31BC844FC00765CAF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D790863F1BC96FDE0039D1D9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +58,11 @@
 			children = (
 				D732F2D11BC844AC00765CAF /* AppDelegate.swift */,
 				D732F2E31BC844FC00765CAF /* SearchViewController.swift */,
+				D790863F1BC96FDE0039D1D9 /* DetailViewController.swift */,
+				D71AB0761BC8FD860000DA64 /* Books.swift */,
 				D732F2D51BC844AC00765CAF /* Main.storyboard */,
 				D732F2D81BC844AC00765CAF /* Assets.xcassets */,
 				D732F2DD1BC844AC00765CAF /* Info.plist */,
-				D71AB0761BC8FD860000DA64 /* Books.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 				D71AB0771BC8FD860000DA64 /* Books.swift in Sources */,
 				D732F2E41BC844FC00765CAF /* SearchViewController.swift in Sources */,
 				D732F2D21BC844AC00765CAF /* AppDelegate.swift in Sources */,
+				D79086401BC96FDE0039D1D9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

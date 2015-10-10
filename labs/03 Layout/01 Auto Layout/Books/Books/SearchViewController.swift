@@ -8,28 +8,53 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController, UISearchResultsUpdating {
+class SearchViewController: UITableViewController, UISearchBarDelegate {
+
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        print("updateSearch")
+    var searchResults = [Book]()
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        print("search clicked")
+        print(searchBar.text)
+        if let text:String = searchBar.text {
+            self.search(withText: text)
+        }
+    }
+    
+    func search(withText text:String) {
+        do {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            try Books.search(withText: text, completion: {booklist in
+                print(booklist)
+                self.searchResults = booklist
+                dispatch_async(dispatch_get_main_queue(), {
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    self.tableView.reloadData()
+                    self.searchBar.resignFirstResponder()
+                })
+            })
+        } catch {
+            print("error when searching for books")
+        }
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetails" {
+            if let destination:DetailViewController = segue.destinationViewController as? DetailViewController {
+                if let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow {
+                    destination.book = self.searchResults[indexPath.row]
+                }
+            }
+            
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do {
-            try Books.search(withText: "JavaScript", completion: {booklist in
-                print(booklist)
-            })
-        } catch {
-            
-        }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.searchBar.delegate = self
+        //self.search()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,14 +71,14 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return self.searchResults.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BasicSearchItem", forIndexPath: indexPath)
         if let label:UILabel = cell.textLabel {
-            label.text = "Hello World"
+            label.text = self.searchResults[indexPath.row].title
         }
         return cell
     }

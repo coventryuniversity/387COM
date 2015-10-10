@@ -20,9 +20,10 @@ class Books {
     
     class func search(withText text:String, completion: ([Book])->()) throws {
         var books = [Book]()
-        let jsonUrl = "https://www.googleapis.com/books/v1/volumes?q=\(text)"
+        let jsonUrl = "https://www.googleapis.com/books/v1/volumes?maxResults=40&fields=items(id,volumeInfo(title))&q=\(text)"
         print(jsonUrl)
         let session = NSURLSession.sharedSession()
+        
         guard let booksUrl = NSURL(string: jsonUrl) else {
             throw JSONError.InvalidURL(jsonUrl)
         }
@@ -49,6 +50,7 @@ class Books {
                 }
             } catch {
                 print("Fetch failed: \((error as NSError).localizedDescription)")
+                //throw JSONError.InvalidURL(jsonUrl)
             }
             completion(books)
         }).resume()
