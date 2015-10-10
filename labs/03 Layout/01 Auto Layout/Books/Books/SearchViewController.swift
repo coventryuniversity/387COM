@@ -8,10 +8,22 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController {
+class SearchViewController: UITableViewController, UISearchResultsUpdating {
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        print("updateSearch")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            try Books.search(withText: "JavaScript", completion: {booklist in
+                print(booklist)
+            })
+        } catch {
+            
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

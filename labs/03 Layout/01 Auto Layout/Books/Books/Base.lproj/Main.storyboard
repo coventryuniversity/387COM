@@ -13,9 +13,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search for books" showsSearchResultsButton="YES" id="eYu-cg-6Dk">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="JU6-rG-Sez" id="ad0-Vy-rYT"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasicSearchItem" textLabel="wd1-rh-JOr" style="IBUITableViewCellStyleDefault" id="x3z-LR-fIL">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x3z-LR-fIL" id="k8F-TT-KF0">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -41,8 +54,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="dTI-M3-Dhw"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="L3D-RZ-A5I" id="Wc5-0N-2bk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEt-aR-C4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="L3D-RZ-A5I">
+                    <connections>
+                        <outlet property="delegate" destination="JU6-rG-Sez" id="pbE-LI-u5i"/>
+                        <outlet property="searchBar" destination="eYu-cg-6Dk" id="rtk-So-wX4"/>
+                        <outlet property="searchContentsController" destination="JU6-rG-Sez" id="DbH-pZ-sgS"/>
+                        <outlet property="searchResultsDataSource" destination="JU6-rG-Sez" id="krU-Ln-vhw"/>
+                        <outlet property="searchResultsDelegate" destination="JU6-rG-Sez" id="LoE-0h-fYK"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="502" y="354"/>
         </scene>
