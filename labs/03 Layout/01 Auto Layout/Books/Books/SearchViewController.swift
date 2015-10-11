@@ -60,6 +60,21 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /* this delegate method controls the edit actions for each table cell. These are triggered by swiping left on a cell. In this example we define one action but you can have as many of these as you wish. */
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        /* here we define our sole share action. Notice the three parameters. The first defines the style, the second is the label that appears and the final is a completion handler that runs when the action is clicked. */
+        let shareAction = UITableViewRowAction(style: .Normal, title: "Share", handler: {(action: UITableViewRowAction, indexPath: NSIndexPath) -> Void in
+            let book = self.searchResults[indexPath.row]
+            /* a UIActivityViewController offers various services from the underlying system. We pass the items we want to share and the system presents suitable services based on this information. */
+            let activityViewController = UIActivityViewController(activityItems: [book.id, book.title], applicationActivities: nil)
+            /* having configured the activityViewController we need to display it. */
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+        })
+        shareAction.backgroundColor = UIColor.grayColor()
+        /* we return an array of the actions. These get displayed when we swipe a table cell left. */
+        return [shareAction]
+    }
 
     // MARK: - Table view data source
 
