@@ -29,7 +29,7 @@ Add a method called `addUnique()` that only adds the new item if it does not alr
 Add documentation to both of these methods and write code to test them.
 
 ### 1.3 Advanced Challenge
-	
+
 There is a **struct** defined at the top of the script. Modify the class so that it stores **Item** structs instead of **Strings**.
 
 Remember to update the documentation!
@@ -43,7 +43,7 @@ You will be using the following foundation classes during the task. Take a momen
 1. NSURLSession
 2. NSURL
 
-Start by making the request in a web browser to see what data the API call will return. Open the Safari browser and enter the following URL. 
+Start by making the request in a web browser to see what data the API call will return. Open the Safari browser and enter the following URL.
 
 http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&cnt=7&q=coventry,uk
 
@@ -77,7 +77,7 @@ The final activity will consolidate your understanding of the basic Swift langua
 
 Load the **Weather** Project into XCode
 
-In your web browser open the following URL in **Safari**, it will help you understand the code better. 
+In your web browser open the following URL in **Safari**, it will help you understand the code better.
 
 http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&cnt=7&q=coventry,uk
 
@@ -109,7 +109,7 @@ Make sure you understand what its purpose is. In particular read through the doc
 4. NSDate
 5. NSDateFormatter
 
-Currently only the date is showing in each cell. Open up the Storyboard, select the table cell and, in the **attribute inspector** change the style from **Basic** to **Right Detail**. Notice how in the cell-for-row-at-indexpath data source method only unwraps and sets the 
+Currently only the date is showing in each cell. Open up the Storyboard, select the table cell and, in the **attribute inspector** change the style from **Basic** to **Right Detail**. Notice how in the cell-for-row-at-indexpath data source method only unwraps and sets the
 
 Use the existing code as a guide to unwrap the **detailTextLabel**. Display the date in this and, in the main **textLabel** display the weather description and max temperature using string interpolation (there are several examples of this in the code).
 
@@ -163,3 +163,7 @@ Study the code to understand the steps undertaken to display the current longitu
 
 
 http://openweathermap.org/img/w/10d.png
+
+## Presentation
+
+https://goo.gl/RfY8ee
