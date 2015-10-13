@@ -89,3 +89,7 @@ If you have an iPhone, install the app and view the share sheet.
 
 1. Add a second edit action called **Add** which adds the book to the *Favourites* singleton. You can check this is working by printing out the `bookList` property each time a book is added.
 2. You are already returning the book thumbnail as a UIImage. Pass this to the activity view controller as well as the book title. What extra options are now available in the share sheet?
+
+## Presentation
+
+https://goo.gl/vHnDFt
