@@ -62,10 +62,10 @@
 				D732F2E31BC844FC00765CAF /* SearchViewController.swift */,
 				D790863F1BC96FDE0039D1D9 /* DetailViewController.swift */,
 				D71AB0761BC8FD860000DA64 /* Books.swift */,
+				D7EDB5B71BCAF74E00A1984A /* Favourites.swift */,
 				D732F2D51BC844AC00765CAF /* Main.storyboard */,
 				D732F2D81BC844AC00765CAF /* Assets.xcassets */,
 				D732F2DD1BC844AC00765CAF /* Info.plist */,
-				D7EDB5B71BCAF74E00A1984A /* Favourites.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";

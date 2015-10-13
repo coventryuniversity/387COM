@@ -62,6 +62,15 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func testSingleton() {
+        let fav1 = Favourites.sharedInstance
+        fav1.addBook(Book(id:"hob1", title: "The Hobbit"))
+        print(fav1.bookList)
+        let fav2 = Favourites.sharedInstance
+        fav2.addBook(Book(id: "lotr", title: "The Lord of the Rings"))
+        print(fav2.bookList)
+    }
+    
     /* this delegate method controls the edit actions for each table cell. These are triggered by swiping left on a cell. In this example we define one action but you can have as many of these as you wish. */
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         /* here we define our sole share action. Notice the three parameters. The first defines the style, the second is the label that appears and the final is a completion handler that runs when the action is clicked. */
