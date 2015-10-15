@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Notes
-//
-//  Created by Mark Tyers on 22/09/2015.
-//  Copyright © 2015 Mark Tyers. All rights reserved.
-//
 
 import UIKit
 
@@ -15,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 3))
         return true
     }
 

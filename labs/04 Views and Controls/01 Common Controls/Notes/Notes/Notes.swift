@@ -9,8 +9,7 @@
 import Foundation
 
 struct Note {
-    var name: String
-    var created: NSDate
+    var created: NSDate = NSDate()
     var content: String
 }
 
@@ -21,7 +20,7 @@ enum NoteError: ErrorType {
 /// a class for storing and retrieving a list of notes.
 class Notes {
     /* this is the private array to store the list of notes. It is not visible from other parts of the app. */
-    private var noteList = [Note]()
+    private var noteList:[Note]
     /**
      returns the a shared instance of the notes class. This can be shared between different views and as such doesn't need to be held in a public variable within the view controller.
      */
@@ -29,7 +28,7 @@ class Notes {
     
     /* this is the initialiser. Note that it is private and so can't be accessed directly. */
     private init() {
-        
+        self.noteList = []
     }
     
     /**
@@ -39,9 +38,10 @@ class Notes {
      :param: content The text to be stored in the note
      */
     /* Note that this function returns a **tuple**. This is allows a function to return multiple values. */
-    func addNote(withName name: String, content: String) -> (Bool, Int) {
-        let newNote = Note(name: name, created: NSDate(), content: content)
+    func addNote(withContent content: String) -> (Bool, Int) {
+        let newNote = Note(created: NSDate(), content: content)
         self.noteList.append(newNote)
+        print(self.noteList)
         return (true, self.noteList.count)
     }
     
@@ -57,6 +57,12 @@ class Notes {
         } else {
             let note = self.noteList[index]
             return note
+        }
+    }
+    
+    var count:Int {
+        get {
+            return self.noteList.count
         }
     }
 }

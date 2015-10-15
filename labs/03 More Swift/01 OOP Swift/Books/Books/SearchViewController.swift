@@ -25,6 +25,11 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    /* this is another UISearchBarDelegate method */
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        <#code#>
+    }
+    
     /* this method gets called by the UISearchBar delegate method (see above) */
     func search(withText text:String) {
         do {  // our Books.search() class method may return an error so we wrap it in a do...catch block
