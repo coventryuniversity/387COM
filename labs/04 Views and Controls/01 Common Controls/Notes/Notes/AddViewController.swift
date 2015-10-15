@@ -9,13 +9,11 @@ class AddViewController: UIViewController, UIGestureRecognizerDelegate, UITextVi
     @IBOutlet var swipeDown: UISwipeGestureRecognizer!
     
     @IBAction func closeView(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: {() -> Void in
-            print("closeView")
-            if let content:String = self.textView.text {
-                Notes.getInstance.addNote(withContent: content)
-                print("note added")
-            }
-        })
+        if let content:String = self.textView.text {
+            Notes.getInstance.addNote(withContent: content)
+            print("note added")
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

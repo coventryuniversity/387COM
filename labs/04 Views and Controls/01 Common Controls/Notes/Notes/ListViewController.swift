@@ -23,13 +23,18 @@ class ListViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return Notes.getInstance.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteCell", forIndexPath: indexPath)
-        if let label = cell.textLabel {
-            label.text = "Hello World"
+        do {
+            let date:NSDate = try Notes.getInstance.getNote(atIndex: indexPath.row).created
+            if let label = cell.textLabel {
+                label.text = "\(date)"
+            }
+        } catch {
+            print("index out of range")
         }
         return cell
     }
@@ -37,6 +42,7 @@ class ListViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         print("viewDidAppear")
         print("there are \(Notes.getInstance.count) notes")
+        self.tableView.reloadData()
     }
 
     /*
