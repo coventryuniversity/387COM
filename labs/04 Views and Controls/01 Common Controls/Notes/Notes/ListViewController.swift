@@ -6,7 +6,27 @@ class ListViewController: UITableViewController {
     
 
     override func viewDidLoad() {
+        print("viewDidLoad:       ListViewController")
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear:    ListViewController")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("viewDidAppear:     ListViewController")
+        /* each time the view becomes visible we reload the table view */
+        print("there are \(Notes.getInstance.count) notes")
+        self.tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        print("viewWillDisappear: ListViewController")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        print("viewDidDisappear:  ListViewController")
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,27 +42,24 @@ class ListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        /* the number of rows should match the number of notes in the singleton */
         return Notes.getInstance.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteCell", forIndexPath: indexPath)
         do {
+            /* .getNote() may propagate an error which needs to be handled. */
             let date:NSDate = try Notes.getInstance.getNote(atIndex: indexPath.row).created
+            // unwrap the textLabel optional
             if let label = cell.textLabel {
+                // display the note creation date
                 label.text = "\(date)"
             }
         } catch {
             print("index out of range")
         }
         return cell
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        print("viewDidAppear")
-        print("there are \(Notes.getInstance.count) notes")
-        self.tableView.reloadData()
     }
 
     /*

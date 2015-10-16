@@ -31,25 +31,21 @@ class Notes {
         self.noteList = []
     }
     
-    /**
-     Adds a new note to the list of notes.
-     
-     :param: name The name of the new note
-     :param: content The text to be stored in the note
-     */
-    /* Note that this function returns a **tuple**. This is allows a function to return multiple values. */
-    func addNote(withContent content: String) -> (Bool, Int) {
+    
+    /// Adds a new note to the list of notes.
+    ///
+    /// :param: name The name of the new note
+    /// :param: content The text to be stored in the note
+    func addNote(withContent content: String) {
         let newNote = Note(created: NSDate(), content: content)
         self.noteList.append(newNote)
-        print(self.noteList)
-        return (true, self.noteList.count)
     }
     
-    /**
-     Retrieves the note at the given index position
-       :param: index The index position requested
-       :returns: A Note struct representing the requested note
-     */
+    
+    /// Retrieves the note at the given index position
+    ///   :param: index The index position requested
+    ///   :returns: A Note struct representing the requested note
+
     /* notice that this function may throw an error (if the index is out of range). This is indicated by the keyword **throws** in the function declaration. The function will either return a **Note** or an **indexOutOfRange** error. */
     func getNote(atIndex index: Int) throws -> Note {
         if index < 0 || index > self.noteList.count {
@@ -60,6 +56,7 @@ class Notes {
         }
     }
     
+    /// read-only property that returns the number of notes stored.
     var count:Int {
         get {
             return self.noteList.count
