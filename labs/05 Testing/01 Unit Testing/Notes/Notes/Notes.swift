@@ -34,6 +34,9 @@ class Notes {
         self.noteList = []
     }
     
+    func clear() {
+        self.noteList = []
+    }
     
     /// Adds a new note to the list of notes.
     ///
@@ -54,7 +57,7 @@ class Notes {
         // should throw indexOutOfRange error if invalid index
     }
     
-    func remoteNote(withName name:String) throws {
+    func removeNote(withName name:String) throws {
         // should throw invalidName error if not found
     }
     

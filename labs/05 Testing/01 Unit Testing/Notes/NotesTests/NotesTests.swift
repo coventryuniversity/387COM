@@ -13,6 +13,7 @@ import XCTest
 class NotesTests: XCTestCase {
     
     override func setUp() {
+        Notes.getInstance.clear()
         Notes.getInstance.addNoteWithName("note1", content: "first note details")
         Notes.getInstance.addNoteWithName("note2", content: "second note details")
         Notes.getInstance.addNoteWithName("note3", content: "third note details")
@@ -37,7 +38,7 @@ class NotesTests: XCTestCase {
     func testAddNoteUnique() {
         do {
             try Notes.getInstance.addNoteWithUniqueName("note5", content: "fifth note details")
-            XCTAssertEqual(Notes.getInstance.count, 4)
+            XCTAssertEqual(Notes.getInstance.count, 5)
         } catch {
             XCTFail("Wrong error")
         }
@@ -55,10 +56,6 @@ class NotesTests: XCTestCase {
         } catch {
             XCTFail("Wrong error")
         }
-    }
-    
-    func testDeleteNote() {
-        
     }
     
 }
