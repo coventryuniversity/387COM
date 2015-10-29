@@ -16,6 +16,8 @@ struct Note {
 
 enum NoteError: ErrorType, Equatable {
     case indexOutOfRange
+    case invalidName
+    case duplicateNote
 }
 
 /// a class for storing and retrieving a list of notes.
@@ -40,6 +42,20 @@ class Notes {
     func addNoteWithName(name:String, content note:String) {
         let newNote = Note(created: NSDate(), name: name, content: note)
         self.noteList.append(newNote)
+    }
+    
+    func addNoteWithUniqueName(name:String, content note:String) throws {
+        // should throw duplicateNote error if name already taken
+        let newNote = Note(created: NSDate(), name: name, content: note)
+        self.noteList.append(newNote)
+    }
+    
+    func removeNote(atIndex index:Int) throws {
+        // should throw indexOutOfRange error if invalid index
+    }
+    
+    func remoteNote(withName name:String) throws {
+        // should throw invalidName error if not found
     }
     
     
