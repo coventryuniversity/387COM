@@ -51,10 +51,9 @@ class Notes {
     func getNote(atIndex index: Int) throws -> Note {
         if index < 0 || index > self.noteList.count {
             throw NoteError.indexOutOfRange
-        } else {
-            let note = self.noteList[index]
-            return note
         }
+        let note = self.noteList[index]
+        return note
     }
     
     /// read-only property that returns the number of notes stored.

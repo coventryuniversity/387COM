@@ -10,23 +10,9 @@ class ListViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        print("viewWillAppear:    ListViewController")
-    }
-    
     override func viewDidAppear(animated: Bool) {
-        print("viewDidAppear:     ListViewController")
-        /* each time the view becomes visible we reload the table view */
         print("there are \(Notes.getInstance.count) notes")
         self.tableView.reloadData()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        print("viewWillDisappear: ListViewController")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        print("viewDidDisappear:  ListViewController")
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,7 +15,6 @@
 		D7477E801BB1A1A900E101D9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477E7F1BB1A1A900E101D9 /* ListViewController.swift */; };
 		D7477E841BB1A1F100E101D9 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477E831BB1A1F100E101D9 /* Notes.swift */; };
 		D7AEAF661BE2A0BC00639C73 /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEAF651BE2A0BC00639C73 /* NotesTests.swift */; };
-		D7AEAF6D1BE2A0C500639C73 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7477E831BB1A1F100E101D9 /* Notes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7AEAF661BE2A0BC00639C73 /* NotesTests.swift in Sources */,
-				D7AEAF6D1BE2A0C500639C73 /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,8 @@ class NotesTests: XCTestCase {
         XCTAssertEqual(Notes.getInstance.count, 1)
         do {
             let note:Note = try Notes.getInstance.getNote(atIndex: 0)
+            let _:Note = try Notes.getInstance.getNote(atIndex: -2)
+            let _:Note = try Notes.getInstance.getNote(atIndex: 1)
             XCTAssertEqual(note.name, "note1")
             XCTAssertEqual(note.content, "first note details")
         } catch let e as NoteError {
