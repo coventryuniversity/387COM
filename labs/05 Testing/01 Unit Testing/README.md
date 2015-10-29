@@ -83,3 +83,29 @@ This involves the following steps:
 5. commit your code again.
 
 Congratulations, you have learned how to use automated tests to improve your workflow and have tried out TDD.
+
+## 4 Adding Unit tests
+
+In this final task you will add unit tests to an existing project. Start by opening the **ToDo** project in XCode. Notice that there are no tests configured.
+
+Choose **File > New Target** from the menu and choose **iOS Unit Testing Bundle** from the _Testing_ section.
+
+![New Target](images/new_target.png "New Target")
+
+This will add the testing directory to the project.
+
+### 4.1 Configuring Code Coverage
+
+Choose _Edit Scheme_ from the app button in the top toolbar.
+
+![Edit Scheme](images/edit_scheme.png "Edit Scheme")
+
+Now check the _Gather Coverage Data_ checkbox in the _Test_ section of the scheme dialog as shown.
+
+![Scheme Settings](images/scheme_settings.png "Scheme Settings")
+
+The project is now configured for unit testing.
+
+### 4.2 Test Your Knowledge
+
+Configure testing as shown above then write a suite of tests aiming for 100% code coverage.
