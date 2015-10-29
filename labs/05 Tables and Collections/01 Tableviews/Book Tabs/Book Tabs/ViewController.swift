@@ -9,9 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private var booklist:Books?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
+        do {
+            self.booklist = try Books(withSubject: "swift", completion: {() in
+                print("finished downloading data")
+            })
+        } catch {
+            
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
