@@ -1,14 +1,14 @@
 
 import Foundation
+import UIKit
 
 struct Book {
     var id:String
     var title:String
-    var publisher:String
 }
 
 enum JSONError: ErrorType {
-    case InvalidURL
+    case InvalidURL(String)
     case InvalidKey(String)
     case InvalidArray
     case InvalidData
@@ -17,26 +17,23 @@ enum JSONError: ErrorType {
 }
 
 class Books {
-    private var books:[Book]
-    private var publishers = Set<String>()
-    
-    init(withSubject subject:String, completion: ()->() ) throws {
-        print("init")
-        self.books = []
-        guard let url = NSURL(string: "https://www.googleapis.com/books/v1/volumes?maxResults=40&fields=items(id,volumeInfo(title,%20publisher))&q=\(subject)") else {
-            throw JSONError.InvalidURL
-        }
-        print("valid URL: \(url)")
+    class func search(withText text:String, completion: ([Book])->()) throws {
+        var books = [Book]()
+        let jsonUrl = "https://www.googleapis.com/books/v1/volumes?maxResults=40&fields=items(id,volumeInfo(title))&q=\(text)"
+        print(jsonUrl)
         let session = NSURLSession.sharedSession()
-        session.dataTaskWithURL(url, completionHandler: {(data, response, error) -> Void in
+        
+        guard let booksUrl = NSURL(string: jsonUrl) else {
+            throw JSONError.InvalidURL(jsonUrl)
+        }
+        session.dataTaskWithURL(booksUrl, completionHandler: {(data, response, error) -> Void in
             do {
-                print("trying to access json data")
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+                //print(json)
                 guard let items:[AnyObject] = (json["items"] as! [AnyObject]) else {
                     throw JSONError.InvalidArray
                 }
                 for item in items {
-                    print(item)
                     guard let id:String = item["id"] as? String else {
                         throw JSONError.InvalidKey("id")
                     }
@@ -46,25 +43,20 @@ class Books {
                     guard let title:String = volume["title"] as? String else {
                         throw JSONError.InvalidKey("title")
                     }
-                    guard let publisher:String = volume["publisher"] as? String else {
-                        throw JSONError.InvalidKey("publisher")
-                    }
-                    let newBook = Book(id: id, title: title, publisher: publisher)
+                    let newBook = Book(id: id, title: title)
                     print(newBook)
-                    self.books.append(newBook)
+                    books.append(newBook)
                 }
-                for book in self.books {
-                    self.publishers.insert(book.publisher)
-                }
-                print(self.publishers)
-                completion()
             } catch {
                 print("Fetch failed: \((error as NSError).localizedDescription)")
             }
-        })
+            completion(books)
+        }).resume()
     }
-    
-    private func getBooks() {
-        
+    class func booklist(list:[Book], unique field:String) {
+        var fields = Set<String>()
+        for book in list {
+            
+        }
     }
 }

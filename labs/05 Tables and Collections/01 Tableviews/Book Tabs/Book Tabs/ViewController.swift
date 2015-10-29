@@ -10,24 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var booklist:Books?
+    private var bookResults = [Book]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
+        self.search(withText: "swift")
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func search(withText text:String) {
         do {
-            self.booklist = try Books(withSubject: "swift", completion: {() in
-                print("finished downloading data")
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            try Books.search(withText: text, completion: {booklist in
+                print(booklist)
+                self.bookResults = booklist
+                dispatch_async(dispatch_get_main_queue(), {
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    //self.tableView.reloadData()
+                    //self.searchBar.resignFirstResponder()
+                })
             })
         } catch {
-            
+            print("error when searching for books")
         }
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
